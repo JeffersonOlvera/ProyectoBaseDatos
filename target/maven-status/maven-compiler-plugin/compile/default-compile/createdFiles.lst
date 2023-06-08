@@ -1,3 +1,7 @@
-com\bd\proyectobasedatos\ProyectoBaseDatos.class
-com\bd\proyectobasedatos\registroConductor$1.class
-com\bd\proyectobasedatos\registroConductor.class
+controlador\controlador.class
+vista\panelCliente.class
+vista\panelCliente$2.class
+vista\registroConductor$1.class
+vista\panelCliente$1.class
+vista\panelCliente$3.class
+vista\registroConductor.class
