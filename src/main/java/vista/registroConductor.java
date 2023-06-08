@@ -1,5 +1,5 @@
 
-package com.bd.proyectobasedatos;
+package vista;
 
 public class registroConductor extends javax.swing.JFrame {
 
