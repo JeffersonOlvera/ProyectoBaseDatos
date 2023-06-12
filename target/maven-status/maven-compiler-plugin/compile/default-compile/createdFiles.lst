@@ -1,7 +1,10 @@
 controlador\controlador.class
+vista\entregaPaquete.class
+vista\entregaPaquete$3.class
 vista\panelCliente.class
 vista\panelCliente$2.class
 vista\registroConductor$1.class
 vista\panelCliente$1.class
-vista\panelCliente$3.class
+vista\entregaPaquete$1.class
+vista\entregaPaquete$2.class
 vista\registroConductor.class

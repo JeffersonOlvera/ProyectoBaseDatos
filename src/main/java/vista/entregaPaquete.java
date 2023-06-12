@@ -83,7 +83,7 @@ public class entregaPaquete extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        Botonera.setBackground(new java.awt.Color(0, 75, 168));
+        Botonera.setBackground(new java.awt.Color(0, 89, 184));
 
         tituloBotonera.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -292,13 +292,13 @@ public class entregaPaquete extends javax.swing.JFrame {
                     .addComponent(tituloBotonera9)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(historialEnvios2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(historialEnvios1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        EncabezadoPanel.setBackground(new java.awt.Color(0, 75, 168));
+        EncabezadoPanel.setBackground(new java.awt.Color(0, 107, 222));
 
         tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N

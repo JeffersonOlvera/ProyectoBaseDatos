@@ -153,7 +153,7 @@
         <Container class="javax.swing.JPanel" name="Botonera">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a8" green="4b" red="0" type="rgb"/>
+              <Color blue="b8" green="59" red="0" type="rgb"/>
             </Property>
           </Properties>
 
@@ -376,7 +376,7 @@
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="historialEnvios2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="historialEnvios1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
@@ -554,7 +554,7 @@
         <Container class="javax.swing.JPanel" name="EncabezadoPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a8" green="4b" red="0" type="rgb"/>
+              <Color blue="de" green="6b" red="0" type="rgb"/>
             </Property>
           </Properties>
 
