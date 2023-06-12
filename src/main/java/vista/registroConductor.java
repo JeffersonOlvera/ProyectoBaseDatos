@@ -32,11 +32,11 @@ public class registroConductor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 560));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 107, 222));
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 570));
 
-        jPanel2.setBackground(new java.awt.Color(211, 212, 217));
+        jPanel2.setBackground(new java.awt.Color(234, 234, 255));
         jPanel2.setForeground(new java.awt.Color(211, 212, 217));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
