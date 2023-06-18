@@ -14,7 +14,12 @@ public class controlador {
             connection = ConexionBD.getConnection();
             
             System.out.println("CONEXIÓN CREADA CON EXITO");
-            // Hacer algo con la conexión...
+            
+            // Ejecutar una consulta utilizando el método executeQuery()
+            String query = "SELECT * FROM cliente";
+            ConexionBD.consultaCliente(connection, query);
+            
+            
         } catch (ClassNotFoundException e) {
             System.out.println("No se encontró el driver JDBC de Oracle.");
             e.printStackTrace();

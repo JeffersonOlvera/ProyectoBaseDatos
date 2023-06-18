@@ -4,6 +4,7 @@ vista\entregaPaquete$3.class
 vista\panelCliente.class
 vista\metodoPago$2.class
 vista\metodoPago.class
+modelo\ConexionBD.class
 vista\entregaPaquete$1.class
 vista\metodoPago2.class
 vista\metodoPago$1.class
@@ -13,4 +14,6 @@ vista\metodoPago2$1.class
 vista\panelCliente$2.class
 vista\registroConductor$1.class
 vista\panelCliente$1.class
+vista\metodoPago2$3.class
 vista\entregaPaquete$2.class
+vista\metodoPago2$2.class
