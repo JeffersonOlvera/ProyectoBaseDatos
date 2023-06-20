@@ -1,9 +1,9 @@
 
 package vista;
 
-public class registroConductor extends javax.swing.JFrame {
+public class RegistroConductor extends javax.swing.JFrame {
 
-    public registroConductor() {
+    public RegistroConductor() {
         initComponents();
     }
 
@@ -191,7 +191,7 @@ public class registroConductor extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new registroConductor().setVisible(true);
+                new RegistroConductor().setVisible(true);
             }
         });
     }

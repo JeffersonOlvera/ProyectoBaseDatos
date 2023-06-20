@@ -2,37 +2,34 @@ package controlador;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 import modelo.ConexionBD;
 
-public class controlador {
+public class Controlador {
 
-    public static void main(String[] args) {
+    public void inicio() {
         Connection connection = null;
 
         try {
-            // Obtener la conexión utilizando el método getConnection()
+            // Uso del0 metodo getConnection()
             connection = ConexionBD.getConnection();
-            
-            System.out.println("CONEXIÓN CREADA CON EXITO");
-            
-            // Ejecutar una consulta utilizando el método executeQuery()
-            String query = "SELECT * FROM cliente";
-            ConexionBD.consultaCliente(connection, query);
-            
+                     
             
         } catch (ClassNotFoundException e) {
-            System.out.println("No se encontró el driver JDBC de Oracle.");
+            JOptionPane.showMessageDialog(null, "No se encontró el driver JDBC de Oracle.");
             e.printStackTrace();
         } catch (SQLException e) {
-            System.out.println("Error al establecer la conexión con la base de datos.");
+            JOptionPane.showMessageDialog(null, "Error al establecer la conexión con la base de datos.");
             e.printStackTrace();
         } finally {
-            // Cerrar la conexión
+            // Cerrar la conexión para liberar recursos
             if (connection != null) {
+                JOptionPane.showMessageDialog(null, "Conexión exitosa");
                 try {
                     connection.close();
                 } catch (SQLException e) {
-                    System.out.println("Error al cerrar la conexión.");
+                    JOptionPane.showMessageDialog(null, "Error al cerrar la conexión.");
                     e.printStackTrace();
                 }
             }
