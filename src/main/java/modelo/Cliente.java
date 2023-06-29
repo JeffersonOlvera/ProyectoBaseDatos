@@ -1,54 +1,23 @@
-
 package modelo;
 
-public class Cliente {
-    private String nombre = "";
-    private String correo = "";
-    private String contrasena = "";
+import java.util.ArrayList;
+
+public class Cliente extends Usuario {
+
+    private ArrayList historialEnvios = new ArrayList();
 
     /**
-     * @return the nombre
+     * @return the historialEnvios
      */
-    public String getNombre() {
-        return nombre;
+    public ArrayList getHistorialEnvios() {
+        return historialEnvios;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param historialEnvios the historialEnvios to set
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setHistorialEnvios(ArrayList historialEnvios) {
+        this.historialEnvios = historialEnvios;
     }
 
-    /**
-     * @return the correo
-     */
-    public String getCorreo() {
-        return correo;
-    }
-
-    /**
-     * @param correo the correo to set
-     */
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    /**
-     * @return the contrasena
-     */
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    /**
-     * @param contrasena the contrasena to set
-     */
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
-
- 
-    
-    
 }
