@@ -27,7 +27,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 580));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
 
-        Encabezado.setBackground(new java.awt.Color(0, 123, 255));
+        Encabezado.setBackground(new java.awt.Color(47, 221, 217));
 
         tituloEncabezado.setBackground(new java.awt.Color(51, 51, 51));
         tituloEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
@@ -52,7 +52,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        Panel.setBackground(new java.awt.Color(255, 255, 255));
+        Panel.setBackground(new java.awt.Color(176, 202, 232));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
         btnLogin.setBackground(new java.awt.Color(29, 29, 29));
@@ -65,7 +65,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        EncabezadoPanel.setBackground(new java.awt.Color(0, 107, 222));
+        EncabezadoPanel.setBackground(new java.awt.Color(98, 151, 170));
 
         tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -118,11 +118,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addComponent(EncabezadoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
                     .addComponent(btnRegistro))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(202, 202, 202))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

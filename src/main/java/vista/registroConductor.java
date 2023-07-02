@@ -23,16 +23,15 @@ public class RegistroConductor extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtContrasena = new javax.swing.JTextField();
+        txtContrasena1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txtcontrasena = new javax.swing.JTextField();
+        txtContrasena2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 560));
 
-        jPanel1.setBackground(new java.awt.Color(0, 107, 222));
+        jPanel1.setBackground(new java.awt.Color(176, 202, 232));
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 570));
 
@@ -105,8 +104,8 @@ public class RegistroConductor extends javax.swing.JFrame {
                             .addComponent(txtModeloCamion)
                             .addComponent(txtCorreo)
                             .addComponent(txtMatricula)
-                            .addComponent(txtContrasena)
-                            .addComponent(txtcontrasena)
+                            .addComponent(txtContrasena1)
+                            .addComponent(txtContrasena2)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,14 +149,14 @@ public class RegistroConductor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
                 .addGap(2, 2, 2)
-                .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtContrasena1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
                 .addGap(2, 2, 2)
-                .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtContrasena2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegistroConductor)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -207,11 +206,11 @@ public class RegistroConductor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField txtContrasena;
+    public javax.swing.JTextField txtContrasena1;
+    public javax.swing.JTextField txtContrasena2;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtMatricula;
     public javax.swing.JTextField txtModeloCamion;
     public javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtcontrasena;
     // End of variables declaration//GEN-END:variables
 }

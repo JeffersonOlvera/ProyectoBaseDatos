@@ -83,7 +83,7 @@
         <Container class="javax.swing.JPanel" name="Encabezado">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="7b" red="0" type="rgb"/>
+              <Color blue="d9" green="dd" red="2f" type="rgb"/>
             </Property>
           </Properties>
 
@@ -134,18 +134,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="iconoEncabezado">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Proyecto\ProyectoBaseDatos\imagenes\Imagen4.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Botonera">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="b8" green="59" red="0" type="rgb"/>
+              <Color blue="aa" green="97" red="62" type="rgb"/>
             </Property>
           </Properties>
 
@@ -183,7 +178,7 @@
             <Component class="javax.swing.JLabel" name="tituloBotonera">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto Light" size="14" style="1"/>
@@ -206,9 +201,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Proyecto\ProyectoBaseDatos\imagenes\icon1.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Entrega de paquete"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
@@ -223,9 +215,6 @@
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Proyecto\ProyectoBaseDatos\imagenes\icon2.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Seguimiento de paquete"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -244,9 +233,6 @@
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Proyecto\ProyectoBaseDatos\imagenes\icon3.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Historial de envios"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>

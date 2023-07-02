@@ -49,15 +49,13 @@ public class EntregaPaquete extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 580));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
 
-        Encabezado.setBackground(new java.awt.Color(0, 123, 255));
+        Encabezado.setBackground(new java.awt.Color(47, 221, 217));
 
         tituloEncabezado.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
         tituloEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         tituloEncabezado.setForeground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
         tituloEncabezado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloEncabezado.setText("Bienvenido a Express");
-
-        iconoEncabezado.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\Imagen4.png")); // NOI18N
 
         javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
         Encabezado.setLayout(EncabezadoLayout);
@@ -83,7 +81,7 @@ public class EntregaPaquete extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        Botonera.setBackground(new java.awt.Color(0, 89, 184));
+        Botonera.setBackground(new java.awt.Color(98, 151, 170));
 
         tituloBotonera.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -94,14 +92,12 @@ public class EntregaPaquete extends javax.swing.JFrame {
         entregaPaqueteBtn.setBackground(new java.awt.Color(29, 29, 29));
         entregaPaqueteBtn.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         entregaPaqueteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        entregaPaqueteBtn.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\icon1.png")); // NOI18N
         entregaPaqueteBtn.setText("Entrega de paquete");
         entregaPaqueteBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         seguimientoPaqueteBtn.setBackground(new java.awt.Color(29, 29, 29));
         seguimientoPaqueteBtn.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         seguimientoPaqueteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        seguimientoPaqueteBtn.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\icon2.png")); // NOI18N
         seguimientoPaqueteBtn.setText("Seguimiento de paquete");
         seguimientoPaqueteBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         seguimientoPaqueteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +109,6 @@ public class EntregaPaquete extends javax.swing.JFrame {
         historialEnvios.setBackground(new java.awt.Color(29, 29, 29));
         historialEnvios.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         historialEnvios.setForeground(new java.awt.Color(255, 255, 255));
-        historialEnvios.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\icon3.png")); // NOI18N
         historialEnvios.setText("Historial de envios");
         historialEnvios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
@@ -148,7 +143,7 @@ public class EntregaPaquete extends javax.swing.JFrame {
 
         BotoneraLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {historialEnvios, tituloBotonera});
 
-        Panel.setBackground(new java.awt.Color(255, 255, 255));
+        Panel.setBackground(new java.awt.Color(176, 202, 232));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
         tituloBotonera3.setBackground(new java.awt.Color(0, 0, 0));
@@ -298,7 +293,7 @@ public class EntregaPaquete extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        EncabezadoPanel.setBackground(new java.awt.Color(0, 107, 222));
+        EncabezadoPanel.setBackground(new java.awt.Color(0, 102, 255));
 
         tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N

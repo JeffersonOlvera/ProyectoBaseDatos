@@ -77,7 +77,7 @@
         <Container class="javax.swing.JPanel" name="Encabezado">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="7b" red="0" type="rgb"/>
+              <Color blue="d9" green="dd" red="2f" type="rgb"/>
             </Property>
           </Properties>
 
@@ -122,7 +122,7 @@
         <Container class="javax.swing.JPanel" name="Panel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="e8" green="ca" red="b0" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -150,12 +150,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="EncabezadoPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+                      <EmptySpace pref="253" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="172" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -185,7 +185,7 @@
             <Container class="javax.swing.JPanel" name="EncabezadoPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="de" green="6b" red="0" type="rgb"/>
+                  <Color blue="aa" green="97" red="62" type="rgb"/>
                 </Property>
               </Properties>
 

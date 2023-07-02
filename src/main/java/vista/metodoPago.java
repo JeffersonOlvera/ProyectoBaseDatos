@@ -30,15 +30,13 @@ public class MetodoPago extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 580));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
 
-        Encabezado.setBackground(new java.awt.Color(0, 123, 255));
+        Encabezado.setBackground(new java.awt.Color(47, 221, 217));
 
         tituloEncabezado.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
         tituloEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         tituloEncabezado.setForeground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
         tituloEncabezado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloEncabezado.setText("Bienvenido a Express");
-
-        iconoEncabezado.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\Imagen4.png")); // NOI18N
 
         javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
         Encabezado.setLayout(EncabezadoLayout);
@@ -64,7 +62,7 @@ public class MetodoPago extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        Panel.setBackground(new java.awt.Color(255, 255, 255));
+        Panel.setBackground(new java.awt.Color(176, 202, 232));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(29, 29, 29));
@@ -86,7 +84,7 @@ public class MetodoPago extends javax.swing.JFrame {
 
         jRadioButton2.setText("Tarjeta de debito");
 
-        EncabezadoPanel.setBackground(new java.awt.Color(0, 107, 222));
+        EncabezadoPanel.setBackground(new java.awt.Color(98, 151, 170));
 
         tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
         tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N

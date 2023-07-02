@@ -2,10 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 //Clases del modelo y vista utilizados
 import modelo.GestionUsuarios;
 import modelo.VentanaUtils;
+import vista.Login;
 import vista.RegistroCliente;
 import vista.RegistroConductor;
 import vista.SeleccionUsuario;
@@ -32,11 +32,10 @@ public class Inicio implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ventanaPrincipal.btnLogin) {
             VentanaUtils.cerrarVentana(ventanaPrincipal);
-            JOptionPane.showMessageDialog(null, "Se abre ventana de inicio de sesión");
-
+            Login login = new Login();
+            
         }
         if (e.getSource() == ventanaPrincipal.btnRegistro) {
-            
             VentanaUtils.cerrarVentana(ventanaPrincipal);
             
             SeleccionUsuario seleccionUsuario = new SeleccionUsuario();

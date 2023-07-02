@@ -10,19 +10,17 @@ public class GestionUsuarios {
 
     // Registro del cliente a la BD
     public static boolean registroCliente(Cliente newCliente) {
-
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
 
-        String sql = "INSERT INTO cliente (nombre, apellido, correo, contrasena) values (?,?,?,?)";
+        String sql = "INSERT INTO cliente (nombre, correo, contrasena) values (?,?,?)";
 
         try {
 
             statement = connection.prepareStatement(sql);
             statement.setString(1, newCliente.getNombre());
-            statement.setString(2, newCliente.getApellido());
-            statement.setString(3, newCliente.getCorreo());
-            statement.setString(4, newCliente.getContrasena());
+            statement.setString(2, newCliente.getCorreo());
+            statement.setString(3, newCliente.getContrasena());
 
             // Ejecutar la consulta
             statement.execute();
@@ -43,15 +41,16 @@ public class GestionUsuarios {
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
 
-        String sql = "INSERT INTO cliente (nombre, apellido, correo, contrasena) values (?,?,?,?)";
+        String sql = "INSERT INTO conductor (nombre, correo, contrasena, modelo_camion, numero_placa) values (?,?,?,?,?)";
 
         try {
 
             statement = connection.prepareStatement(sql);
             statement.setString(1, newConductor.getNombre());
-            statement.setString(2, newConductor.getApellido());
-            statement.setString(3, newConductor.getCorreo());
-            statement.setString(4, newConductor.getContrasena());
+            statement.setString(2, newConductor.getCorreo());
+            statement.setString(3, newConductor.getContrasena());
+            statement.setString(3, newConductor.getModeloCamion());
+            statement.setString(5, newConductor.getNumPlaca());
 
             // Ejecutar la consulta
             statement.execute();
