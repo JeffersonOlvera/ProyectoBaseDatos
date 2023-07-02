@@ -136,9 +136,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                              <Component id="btnLogin" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="btnCliente" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                              <Component id="btnRegistro" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="btnConductor" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
                           <Component id="EncabezadoPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -152,8 +152,8 @@
                       <Component id="EncabezadoPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnLogin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnConductor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="172" max="32767" attributes="0"/>
                   </Group>
@@ -161,7 +161,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnLogin">
+            <Component class="javax.swing.JButton" name="btnCliente">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1d" green="1d" red="1d" type="rgb"/>
@@ -172,10 +172,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClienteActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="VentanaPrincipal_loginBtn"/>
@@ -222,12 +222,12 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Selecione la opcion que desee:"/>
+                    <Property name="text" type="java.lang.String" value="Elija su tipo de Usuario "/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnRegistro">
+            <Component class="javax.swing.JButton" name="btnConductor">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="1d" green="1d" red="1d" type="rgb"/>
@@ -238,10 +238,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Registrate"/>
+                <Property name="text" type="java.lang.String" value="Conductor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistroActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConductorActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

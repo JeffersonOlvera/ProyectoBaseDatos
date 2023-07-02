@@ -1,9 +1,9 @@
 
 package vista;
 
-public class RegistroConductor extends javax.swing.JFrame {
+public class RegistroCliente extends javax.swing.JFrame {
 
-    public RegistroConductor() {
+    public RegistroCliente() {
         initComponents();
     }
 
@@ -14,12 +14,11 @@ public class RegistroConductor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         txtModeloCamion = new javax.swing.JTextField();
-        btnRegistroConductor = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -30,7 +29,6 @@ public class RegistroConductor extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 560));
 
         jPanel1.setBackground(new java.awt.Color(0, 107, 222));
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
@@ -45,13 +43,11 @@ public class RegistroConductor extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("Email");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Proyecto\\ProyectoBaseDatos\\imagenes\\Imagen1.png")); // NOI18N
-
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Crear cuenta como conductor");
+        jLabel1.setText("Crear cuenta como cliente");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -59,15 +55,10 @@ public class RegistroConductor extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Nombre");
 
-        btnRegistroConductor.setBackground(new java.awt.Color(29, 29, 29));
-        btnRegistroConductor.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        btnRegistroConductor.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistroConductor.setText("Registrate");
-        btnRegistroConductor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroConductorActionPerformed(evt);
-            }
-        });
+        jButton1.setBackground(new java.awt.Color(29, 29, 29));
+        jButton1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Registrate");
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -115,21 +106,15 @@ public class RegistroConductor extends javax.swing.JFrame {
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(btnRegistroConductor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(97, 97, 97)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(108, 108, 108))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(127, 127, 127)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
@@ -156,7 +141,7 @@ public class RegistroConductor extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegistroConductor)
+                .addComponent(jButton1)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -192,17 +177,13 @@ public class RegistroConductor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistroConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroConductorActionPerformed
-    }//GEN-LAST:event_btnRegistroConductorActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnRegistroConductor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

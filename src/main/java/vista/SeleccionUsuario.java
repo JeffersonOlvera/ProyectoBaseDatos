@@ -1,8 +1,8 @@
 package vista;
 
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class SeleccionUsuario extends javax.swing.JFrame {
 
-    public VentanaPrincipal() {
+    public SeleccionUsuario() {
         initComponents();
     }
 
@@ -14,10 +14,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Encabezado = new javax.swing.JPanel();
         tituloEncabezado = new javax.swing.JLabel();
         Panel = new javax.swing.JPanel();
-        btnLogin = new javax.swing.JButton();
+        btnCliente = new javax.swing.JButton();
         EncabezadoPanel = new javax.swing.JPanel();
         tituloBotonera1 = new javax.swing.JLabel();
-        btnRegistro = new javax.swing.JButton();
+        btnConductor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel - Cliente");
@@ -55,13 +55,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Panel.setBackground(new java.awt.Color(255, 255, 255));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnLogin.setBackground(new java.awt.Color(29, 29, 29));
-        btnLogin.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("Iniciar Sesión");
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+        btnCliente.setBackground(new java.awt.Color(29, 29, 29));
+        btnCliente.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        btnCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnCliente.setText("Cliente");
+        btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+                btnClienteActionPerformed(evt);
             }
         });
 
@@ -71,7 +71,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         tituloBotonera1.setForeground(new java.awt.Color(255, 255, 255));
         tituloBotonera1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloBotonera1.setText("Selecione la opcion que desee:");
+        tituloBotonera1.setText("Elija su tipo de Usuario ");
 
         javax.swing.GroupLayout EncabezadoPanelLayout = new javax.swing.GroupLayout(EncabezadoPanel);
         EncabezadoPanel.setLayout(EncabezadoPanelLayout);
@@ -90,13 +90,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnRegistro.setBackground(new java.awt.Color(29, 29, 29));
-        btnRegistro.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        btnRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistro.setText("Registrate");
-        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+        btnConductor.setBackground(new java.awt.Color(29, 29, 29));
+        btnConductor.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        btnConductor.setForeground(new java.awt.Color(255, 255, 255));
+        btnConductor.setText("Conductor");
+        btnConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroActionPerformed(evt);
+                btnConductorActionPerformed(evt);
             }
         });
 
@@ -108,9 +108,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(172, 172, 172)
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(121, 121, 121)
-                        .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnConductor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(EncabezadoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -120,8 +120,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(EncabezadoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(283, 283, 283)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin)
-                    .addComponent(btnRegistro))
+                    .addComponent(btnCliente)
+                    .addComponent(btnConductor))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
 
@@ -158,20 +158,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
 
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }//GEN-LAST:event_btnClienteActionPerformed
 
-    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+    private void btnConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConductorActionPerformed
 
-    }//GEN-LAST:event_btnRegistroActionPerformed
+    }//GEN-LAST:event_btnConductorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Encabezado;
     private javax.swing.JPanel EncabezadoPanel;
     private javax.swing.JPanel Panel;
-    public javax.swing.JButton btnLogin;
-    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnCliente;
+    public javax.swing.JButton btnConductor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel tituloBotonera1;
     private javax.swing.JLabel tituloEncabezado;
