@@ -27,7 +27,8 @@ public class Inicio implements ActionListener {
     public void run() {
         VentanaUtils.mostrarVentana(ventanaPrincipal, "Venta Principal");
     }
-
+    
+    //Acciones de los botones
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ventanaPrincipal.btnLogin) {
@@ -41,7 +42,8 @@ public class Inicio implements ActionListener {
             SeleccionUsuario seleccionUsuario = new SeleccionUsuario();
             RegistroConductor registroConductor = new RegistroConductor();
             RegistroCliente registroCliente = new RegistroCliente();
-            ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente);
+            GestionUsuarios gestionUsuarios = new GestionUsuarios();
+            ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente, gestionUsuarios);
             controladorRegistro.run();
             
         }

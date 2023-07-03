@@ -32,7 +32,6 @@ public class GestionUsuarios {
             JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
             e.printStackTrace();
         }
-
         return false;
     }
 
@@ -44,12 +43,12 @@ public class GestionUsuarios {
         String sql = "INSERT INTO conductor (nombre, correo, contrasena, modelo_camion, numero_placa) values (?,?,?,?,?)";
 
         try {
-
+            
             statement = connection.prepareStatement(sql);
             statement.setString(1, newConductor.getNombre());
             statement.setString(2, newConductor.getCorreo());
             statement.setString(3, newConductor.getContrasena());
-            statement.setString(3, newConductor.getModeloCamion());
+            statement.setString(4, newConductor.getModeloCamion());
             statement.setString(5, newConductor.getNumPlaca());
 
             // Ejecutar la consulta
@@ -62,12 +61,7 @@ public class GestionUsuarios {
             JOptionPane.showMessageDialog(null, "Error al registrar el conductor.");
             e.printStackTrace();
         }
-
         return false;
-    }
-
-    public static void login() {
-
     }
 
     public static boolean autentificacionCliente(String correo, String contrasena) {
@@ -92,7 +86,6 @@ public class GestionUsuarios {
             JOptionPane.showMessageDialog(null, "Ingrese un usuario y contraseña validos");
             e.printStackTrace();
         }
-
         return false;
     }
 
