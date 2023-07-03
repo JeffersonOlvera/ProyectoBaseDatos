@@ -3,7 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-//Clases adsdad 
+ 
 import modelo.Cliente;
 import modelo.Conductor;
 import modelo.GestionUsuarios;
@@ -30,7 +30,7 @@ public class ControladorRegistro implements ActionListener {
         this.registroConductor.btnRegistroConductor.addActionListener(this);
         this.registroCliente.btnRegistroCliente.addActionListener(this);
     }
-
+    
     public void run() {
         VentanaUtils.mostrarVentana(seleccionUsuario, "Seleccion usuario");
     }
@@ -44,10 +44,10 @@ public class ControladorRegistro implements ActionListener {
         cliente.setContrasena(registroCliente.txtContrasena1.getText());
 
         if (GestionUsuarios.registroCliente(cliente)) {
-            JOptionPane.showMessageDialog(null, "Registro exitoso");
+            JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
 
         } else {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
         }
     } 
     
@@ -62,15 +62,14 @@ public class ControladorRegistro implements ActionListener {
         conductor.setNumPlaca(registroConductor.txtMatricula.getText());
 
         if (GestionUsuarios.registroConductor(conductor)) {
-            JOptionPane.showMessageDialog(null, "Registro exitoso");
-
+            JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
         } else {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error al registrar el conductor.");
 
         }
     }
 
-    //Valida que las dos contraseñas sean iguales
+    //Valida que las dos contraseñas sean iguale
     public boolean validacionContrasena(String contrasena1, String contrasena2) {
         if (contrasena1.equals(contrasena2)) {
             return true;

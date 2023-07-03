@@ -25,11 +25,11 @@ public class GestionUsuarios {
             // Ejecutar la consulta
             statement.execute();
             connection.close();
-            JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
+            //"Cliente registrado exitosamente."
             return true;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
+            //"Error al registrar el cliente."
             e.printStackTrace();
         }
         return false;
@@ -43,7 +43,7 @@ public class GestionUsuarios {
         String sql = "INSERT INTO conductor (nombre, correo, contrasena, modelo_camion, numero_placa) values (?,?,?,?,?)";
 
         try {
-            
+
             statement = connection.prepareStatement(sql);
             statement.setString(1, newConductor.getNombre());
             statement.setString(2, newConductor.getCorreo());
@@ -54,39 +54,43 @@ public class GestionUsuarios {
             // Ejecutar la consulta
             statement.execute();
             connection.close();
-            JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
+            //"Conductor registrado exitosamente."
             return true;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el conductor.");
+            //"Error al registrar el conductor."
             e.printStackTrace();
         }
         return false;
     }
 
-    public static boolean autentificacionCliente(String correo, String contrasena) {
+    public static String autentificacionUsuario(String correo, String contrasena) {
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
         ResultSet result = null;
 
-        String sql = "SELECT correo, contrasena from cliente where correo = ? and contrasena = ?";
+        String sql = "SELECT 'cliente' AS tipo FROM cliente WHERE correo = ? AND contrasena = ? "
+                + "UNION "
+                + "SELECT 'conductor' AS tipo FROM conductor WHERE correo = ? AND contrasena = ?";
 
         try {
             statement = connection.prepareStatement(sql);
             statement.setString(1, correo);
             statement.setString(2, contrasena);
+            statement.setString(3, correo);
+            statement.setString(4, contrasena);
             result = statement.executeQuery();
 
-            while (result.next()) {
-
-                return true;
+            if (result.next()) {
+                String tipoUsuario = result.getString("tipo");
+                connection.close();
+                return tipoUsuario;
             }
-            connection.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Ingrese un usuario y contraseña validos");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al autenticar el usuario");
             e.printStackTrace();
         }
-        return false;
-    }
+        return null;
 
+    }
 }
