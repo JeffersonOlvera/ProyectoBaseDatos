@@ -89,34 +89,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="60" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtModeloCamion" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtCorreo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtMatricula" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtContrasena1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtContrasena2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel11" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                                  <Component id="txtNombre" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btnRegistroConductor" min="-2" pref="154" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                              </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnRegistroConductor" min="-2" pref="154" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel1" alignment="1" min="-2" pref="350" max="-2" attributes="0"/>
+                          <Component id="txtModeloCamion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCorreo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtMatricula" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel11" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                          <Component id="jLabel12" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="jLabel13" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="txtNombre" alignment="0" pref="350" max="32767" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="txtContrasena1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel1" alignment="0" pref="350" max="32767" attributes="0"/>
+                          <Component id="txtContrasena2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
@@ -147,13 +141,13 @@
                       <Component id="txtMatricula" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="txtContrasena1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtContrasena2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="btnRegistroConductor" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
@@ -273,11 +267,6 @@
                 <Property name="text" type="java.lang.String" value="Matricula"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtContrasena1">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -292,11 +281,6 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtContrasena2">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
@@ -314,6 +298,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombre">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="txtContrasena1">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="txtContrasena2">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
