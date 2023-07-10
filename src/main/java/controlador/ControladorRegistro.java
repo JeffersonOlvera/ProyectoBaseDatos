@@ -3,11 +3,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
- 
+
 import modelo.Cliente;
 import modelo.Conductor;
 import modelo.GestionUsuarios;
 import modelo.VentanaUtils;
+import vista.PanelCliente;
+import vista.PanelConductor;
 import vista.SeleccionUsuario;
 import vista.RegistroConductor;
 import vista.RegistroCliente;
@@ -18,19 +20,21 @@ public class ControladorRegistro implements ActionListener {
     RegistroConductor registroConductor;
     RegistroCliente registroCliente;
     GestionUsuarios gestionUsuarios;
+    PanelCliente panelCliente;
+    PanelConductor panelConductor;
 
     public ControladorRegistro(SeleccionUsuario seleccionUsuario, RegistroConductor registroConductor, RegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
         this.seleccionUsuario = seleccionUsuario;
         this.registroConductor = registroConductor;
         this.registroCliente = registroCliente;
         this.gestionUsuarios = gestionUsuarios;
-        
+
         this.seleccionUsuario.btnCliente.addActionListener(this);
         this.seleccionUsuario.btnConductor.addActionListener(this);
         this.registroConductor.btnRegistroConductor.addActionListener(this);
         this.registroCliente.btnRegistroCliente.addActionListener(this);
     }
-    
+
     public void run() {
         VentanaUtils.mostrarVentana(seleccionUsuario, "Seleccion usuario");
     }
@@ -38,7 +42,7 @@ public class ControladorRegistro implements ActionListener {
     //Registro del Cliente
     public void registrarCliente() {
         Cliente cliente = new Cliente();
-        
+
         cliente.setNombre(registroCliente.txtNombre.getText());
         cliente.setCorreo(registroCliente.txtCorreo.getText());
         cliente.setContrasena(registroCliente.txtContrasena1.getText());
@@ -49,12 +53,12 @@ public class ControladorRegistro implements ActionListener {
         } else {
             JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
         }
-    } 
-    
+    }
+
     //Registro del conductor 
     public void registrarConductor() {
         Conductor conductor = new Conductor();
-        
+
         conductor.setNombre(registroConductor.txtNombre.getText());
         conductor.setCorreo(registroConductor.txtCorreo.getText());
         conductor.setContrasena(registroConductor.txtContrasena1.getText());
@@ -88,6 +92,17 @@ public class ControladorRegistro implements ActionListener {
             VentanaUtils.mostrarVentana(registroCliente, "Registro Cliente");
 
         }
+        //Logica para el registro del cliente
+        if (e.getSource() == registroCliente.btnRegistroCliente) {
+            String contrasena1 = registroCliente.txtContrasena1.getText();
+            String contrasena2 = registroCliente.txtContrasena2.getText();
+            if (validacionContrasena(contrasena1, contrasena2)) {
+                registrarCliente();
+                VentanaUtils.cerrarVentana(registroCliente);
+                PanelCliente panelCliente = new PanelCliente();
+                VentanaUtils.mostrarVentana(panelCliente, "Panel Conductor");
+            }
+        }
         //Seleccion usuario conductor
         if (e.getSource() == seleccionUsuario.btnConductor) {
             VentanaUtils.cerrarVentana(seleccionUsuario);
@@ -100,14 +115,9 @@ public class ControladorRegistro implements ActionListener {
             String contrasena2 = registroConductor.txtContrasena2.getText();
             if (validacionContrasena(contrasena1, contrasena2)) {
                 registrarConductor();
-            }
-        }
-        //Logica para el registro del cliente
-        if (e.getSource() == registroCliente.btnRegistroCliente) {
-            String contrasena1 = registroCliente.txtContrasena1.getText();
-            String contrasena2 = registroCliente.txtContrasena2.getText();
-            if (validacionContrasena(contrasena1, contrasena2)) {
-                registrarCliente();
+                VentanaUtils.cerrarVentana(registroConductor);
+                PanelConductor panelConductor = new PanelConductor();
+                VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
             }
         }
 
