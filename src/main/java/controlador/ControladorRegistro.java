@@ -8,22 +8,22 @@ import modelo.Cliente;
 import modelo.Conductor;
 import modelo.GestionUsuarios;
 import modelo.VentanaUtils;
-import vista.PanelCliente;
-import vista.PanelConductor;
-import vista.SeleccionUsuario;
-import vista.RegistroConductor;
-import vista.RegistroCliente;
+import vista.ViewPanelCliente;
+import vista.ViewPanelConductor;
+import vista.ViewSeleccionUsuario;
+import vista.ViewRegistroConductor;
+import vista.ViewRegistroCliente;
 
 public class ControladorRegistro implements ActionListener {
 
-    SeleccionUsuario seleccionUsuario;
-    RegistroConductor registroConductor;
-    RegistroCliente registroCliente;
+    ViewSeleccionUsuario seleccionUsuario;
+    ViewRegistroConductor registroConductor;
+    ViewRegistroCliente registroCliente;
     GestionUsuarios gestionUsuarios;
-    PanelCliente panelCliente;
-    PanelConductor panelConductor;
+    ViewPanelCliente panelCliente;
+    ViewPanelConductor panelConductor;
 
-    public ControladorRegistro(SeleccionUsuario seleccionUsuario, RegistroConductor registroConductor, RegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
+    public ControladorRegistro(ViewSeleccionUsuario seleccionUsuario, ViewRegistroConductor registroConductor, ViewRegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
         this.seleccionUsuario = seleccionUsuario;
         this.registroConductor = registroConductor;
         this.registroCliente = registroCliente;
@@ -99,7 +99,7 @@ public class ControladorRegistro implements ActionListener {
             if (validacionContrasena(contrasena1, contrasena2)) {
                 registrarCliente();
                 VentanaUtils.cerrarVentana(registroCliente);
-                PanelCliente panelCliente = new PanelCliente();
+                ViewPanelCliente panelCliente = new ViewPanelCliente();
                 VentanaUtils.mostrarVentana(panelCliente, "Panel Conductor");
             }
         }
@@ -116,7 +116,7 @@ public class ControladorRegistro implements ActionListener {
             if (validacionContrasena(contrasena1, contrasena2)) {
                 registrarConductor();
                 VentanaUtils.cerrarVentana(registroConductor);
-                PanelConductor panelConductor = new PanelConductor();
+                ViewPanelConductor panelConductor = new ViewPanelConductor();
                 VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
             }
         }

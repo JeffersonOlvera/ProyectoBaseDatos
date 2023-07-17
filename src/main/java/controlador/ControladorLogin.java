@@ -4,23 +4,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-import vista.Login;
+import vista.ViewLogin;
 import modelo.GestionUsuarios;
+import modelo.Paquete;
 import modelo.VentanaUtils;
-import vista.RegistroCliente;
-import vista.RegistroConductor;
-import vista.SeleccionUsuario;
-import vista.PanelCliente;
-import vista.PanelConductor;
+import vista.ViewRegistroCliente;
+import vista.ViewRegistroConductor;
+import vista.ViewSeleccionUsuario;
+import vista.ViewPanelCliente;
+import vista.ViewPanelConductor;
 
 public class ControladorLogin implements ActionListener {
 
-    Login login;
+    ViewLogin login;
     GestionUsuarios gestionUsuarios;
-    SeleccionUsuario seleccionUsuario;
-    PanelCliente panelCliente;
+    ViewSeleccionUsuario seleccionUsuario;
+    ViewPanelCliente panelCliente;
 
-    public ControladorLogin(Login login, GestionUsuarios gestionUsuarios, SeleccionUsuario seleccionUsuario) {
+    public ControladorLogin(ViewLogin login, GestionUsuarios gestionUsuarios, ViewSeleccionUsuario seleccionUsuario) {
         this.login = login;
         this.gestionUsuarios = gestionUsuarios;
         this.seleccionUsuario = seleccionUsuario;
@@ -51,12 +52,20 @@ public class ControladorLogin implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso como " + tipoUsuario);
                 if (tipoUsuario.equalsIgnoreCase("cliente")) {
                     VentanaUtils.cerrarVentana(login);
-                    PanelCliente panelCliente = new PanelCliente();
-                    VentanaUtils.mostrarVentana(panelCliente, "Panel Conductor");
+
+                    Paquete paquete = new Paquete();
+                    ViewPanelCliente panelCliente = new ViewPanelCliente();
+                    ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente, paquete);
+                    controladorPanelCliente.run();
+
                 } else if (tipoUsuario.equalsIgnoreCase("conductor")) {
                     VentanaUtils.cerrarVentana(login);
-                    PanelConductor panelConductor = new PanelConductor();
-                    VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
+                    
+                    Paquete paquete = new Paquete();
+                    ViewPanelConductor panelConductor = new ViewPanelConductor();
+                    ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor, paquete);
+                    controladorPanelConductor.run();
+
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
@@ -66,9 +75,9 @@ public class ControladorLogin implements ActionListener {
         if (e.getSource() == login.btnRegistro) {
             VentanaUtils.cerrarVentana(login);
 
-            SeleccionUsuario seleccionUsuario = new SeleccionUsuario();
-            RegistroConductor registroConductor = new RegistroConductor();
-            RegistroCliente registroCliente = new RegistroCliente();
+            ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
+            ViewRegistroConductor registroConductor = new ViewRegistroConductor();
+            ViewRegistroCliente registroCliente = new ViewRegistroCliente();
             GestionUsuarios gestionUsuarios = new GestionUsuarios();
             ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente, gestionUsuarios);
             controladorRegistro.run();
