@@ -16,10 +16,14 @@ import vista.ViewPanelConductor;
 
 public class ControladorLogin implements ActionListener {
 
-    ViewLogin login;
-    GestionUsuarios gestionUsuarios;
-    ViewSeleccionUsuario seleccionUsuario;
-    ViewPanelCliente panelCliente;
+    private ViewLogin login = new ViewLogin();
+    private GestionUsuarios gestionUsuarios = new GestionUsuarios();
+    private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
+    private final ViewPanelCliente panelCliente = new ViewPanelCliente();
+    private final Paquete paquete = new Paquete();
+    private final ViewPanelConductor panelConductor = new ViewPanelConductor();
+    private final ViewRegistroConductor registroConductor = new ViewRegistroConductor();
+    private final ViewRegistroCliente registroCliente = new ViewRegistroCliente();
 
     public ControladorLogin(ViewLogin login, GestionUsuarios gestionUsuarios, ViewSeleccionUsuario seleccionUsuario) {
         this.login = login;
@@ -28,7 +32,6 @@ public class ControladorLogin implements ActionListener {
 
         this.login.btnLogin.addActionListener(this);
         this.login.btnRegistro.addActionListener(this);
-
     }
 
     public void run() {
@@ -50,35 +53,26 @@ public class ControladorLogin implements ActionListener {
             String tipoUsuario = login();
             if (tipoUsuario != null) {
                 JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso como " + tipoUsuario);
+                //Inicio como Cliente
                 if (tipoUsuario.equalsIgnoreCase("cliente")) {
                     VentanaUtils.cerrarVentana(login);
-
-                    Paquete paquete = new Paquete();
-                    ViewPanelCliente panelCliente = new ViewPanelCliente();
-                    ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente, paquete);
+                    ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
                     controladorPanelCliente.run();
 
-                } else if (tipoUsuario.equalsIgnoreCase("conductor")) {
+                } //Inicio como Conductor
+                else if (tipoUsuario.equalsIgnoreCase("conductor")) {
                     VentanaUtils.cerrarVentana(login);
-                    
-                    Paquete paquete = new Paquete();
-                    ViewPanelConductor panelConductor = new ViewPanelConductor();
                     ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor, paquete);
                     controladorPanelConductor.run();
-
                 }
-            } else {
+            }//Credenciales incorrectos 
+            else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
             }
-        }
-        //Boton de registro
+
+        }//Boton de registro
         if (e.getSource() == login.btnRegistro) {
             VentanaUtils.cerrarVentana(login);
-
-            ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
-            ViewRegistroConductor registroConductor = new ViewRegistroConductor();
-            ViewRegistroCliente registroCliente = new ViewRegistroCliente();
-            GestionUsuarios gestionUsuarios = new GestionUsuarios();
             ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente, gestionUsuarios);
             controladorRegistro.run();
         }

@@ -16,12 +16,12 @@ import vista.ViewRegistroCliente;
 
 public class ControladorRegistro implements ActionListener {
 
-    ViewSeleccionUsuario seleccionUsuario;
-    ViewRegistroConductor registroConductor;
-    ViewRegistroCliente registroCliente;
-    GestionUsuarios gestionUsuarios;
-    ViewPanelCliente panelCliente;
-    ViewPanelConductor panelConductor;
+    private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
+    private ViewRegistroConductor registroConductor = new ViewRegistroConductor();
+    private ViewRegistroCliente registroCliente = new ViewRegistroCliente();
+    private GestionUsuarios gestionUsuarios = new GestionUsuarios();
+    private final ViewPanelCliente panelCliente = new ViewPanelCliente();
+    private final ViewPanelConductor panelConductor = new ViewPanelConductor();
 
     public ControladorRegistro(ViewSeleccionUsuario seleccionUsuario, ViewRegistroConductor registroConductor, ViewRegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
         this.seleccionUsuario = seleccionUsuario;
@@ -103,6 +103,7 @@ public class ControladorRegistro implements ActionListener {
                 VentanaUtils.mostrarVentana(panelCliente, "Panel Conductor");
             }
         }
+
         //Seleccion usuario conductor
         if (e.getSource() == seleccionUsuario.btnConductor) {
             VentanaUtils.cerrarVentana(seleccionUsuario);
@@ -120,7 +121,5 @@ public class ControladorRegistro implements ActionListener {
                 VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
             }
         }
-
     }
-
 }

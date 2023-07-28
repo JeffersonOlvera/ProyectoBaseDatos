@@ -13,11 +13,15 @@ import vista.ViewPrincipal;
 
 public class Inicio implements ActionListener {
 
-    GestionUsuarios modelo;
-    ViewPrincipal ventanaPrincipal;
+    private GestionUsuarios gestionUsuarios = new GestionUsuarios();
+    private ViewPrincipal ventanaPrincipal = new ViewPrincipal();
+    private ViewLogin login = new ViewLogin();
+    private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
+    private ViewRegistroConductor registroConductor = new ViewRegistroConductor();
+    private ViewRegistroCliente registroCliente = new ViewRegistroCliente();
 
-    public Inicio(GestionUsuarios modelo, ViewPrincipal ventanaPrincipal) {
-        this.modelo = modelo;
+    public Inicio(GestionUsuarios gestionUsuarios, ViewPrincipal ventanaPrincipal) {
+        this.gestionUsuarios = gestionUsuarios;
         this.ventanaPrincipal = ventanaPrincipal;
         //Botones
         this.ventanaPrincipal.btnLogin.addActionListener(this);
@@ -33,19 +37,11 @@ public class Inicio implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ventanaPrincipal.btnLogin) {
             VentanaUtils.cerrarVentana(ventanaPrincipal);
-            ViewLogin login = new ViewLogin();
-            GestionUsuarios gestionUsuarios = new GestionUsuarios();
-            ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
             ControladorLogin controladorLogin = new ControladorLogin(login, gestionUsuarios, seleccionUsuario);
             controladorLogin.run();
         }
         if (e.getSource() == ventanaPrincipal.btnRegistro) {
             VentanaUtils.cerrarVentana(ventanaPrincipal);
-
-            ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
-            ViewRegistroConductor registroConductor = new ViewRegistroConductor();
-            ViewRegistroCliente registroCliente = new ViewRegistroCliente();
-            GestionUsuarios gestionUsuarios = new GestionUsuarios();
             ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente, gestionUsuarios);
             controladorRegistro.run();
 
