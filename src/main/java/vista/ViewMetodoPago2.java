@@ -14,8 +14,6 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
         Encabezado = new javax.swing.JPanel();
         tituloEncabezado = new javax.swing.JLabel();
         iconoEncabezado = new javax.swing.JLabel();
-        EncabezadoPanel = new javax.swing.JPanel();
-        tituloBotonera1 = new javax.swing.JLabel();
         Panel = new javax.swing.JPanel();
         tituloBotonera11 = new javax.swing.JLabel();
         tituloBotonera13 = new javax.swing.JLabel();
@@ -27,15 +25,17 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
         tituloBotonera12 = new javax.swing.JLabel();
         BtnConfirmar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        EncabezadoPanel = new javax.swing.JPanel();
+        tituloBotonera1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel - Cliente");
 
         Encabezado.setBackground(new java.awt.Color(47, 221, 217));
 
-        tituloEncabezado.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
+        tituloEncabezado.setBackground(new java.awt.Color(29, 29, 29));
         tituloEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        tituloEncabezado.setForeground(javax.swing.UIManager.getDefaults().getColor("TextField.darkShadow"));
+        tituloEncabezado.setForeground(new java.awt.Color(29, 29, 29));
         tituloEncabezado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloEncabezado.setText("Bienvenido a Express");
 
@@ -50,7 +50,7 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
                 .addComponent(iconoEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tituloEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         EncabezadoLayout.setVerticalGroup(
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,31 +63,6 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(iconoEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
-        );
-
-        EncabezadoPanel.setBackground(new java.awt.Color(98, 151, 170));
-
-        tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
-        tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        tituloBotonera1.setForeground(new java.awt.Color(255, 255, 255));
-        tituloBotonera1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloBotonera1.setText("Selecione su metodo de pago:");
-
-        javax.swing.GroupLayout EncabezadoPanelLayout = new javax.swing.GroupLayout(EncabezadoPanel);
-        EncabezadoPanel.setLayout(EncabezadoPanelLayout);
-        EncabezadoPanelLayout.setHorizontalGroup(
-            EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EncabezadoPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tituloBotonera1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(235, 235, 235))
-        );
-        EncabezadoPanelLayout.setVerticalGroup(
-            EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tituloBotonera1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
 
         Panel.setBackground(new java.awt.Color(176, 202, 232));
@@ -141,7 +116,7 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -170,7 +145,7 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
+                .addContainerGap(88, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera11))
@@ -195,14 +170,42 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        EncabezadoPanel.setBackground(new java.awt.Color(98, 151, 170));
+
+        tituloBotonera1.setBackground(new java.awt.Color(255, 255, 255));
+        tituloBotonera1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        tituloBotonera1.setForeground(new java.awt.Color(255, 255, 255));
+        tituloBotonera1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloBotonera1.setText("Selecione el método de pago:");
+
+        javax.swing.GroupLayout EncabezadoPanelLayout = new javax.swing.GroupLayout(EncabezadoPanel);
+        EncabezadoPanel.setLayout(EncabezadoPanelLayout);
+        EncabezadoPanelLayout.setHorizontalGroup(
+            EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EncabezadoPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(tituloBotonera1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        EncabezadoPanelLayout.setVerticalGroup(
+            EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 29, Short.MAX_VALUE)
+            .addGroup(EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EncabezadoPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(tituloBotonera1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(EncabezadoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,11 +213,8 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
                 .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(EncabezadoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 416, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(0, 128, Short.MAX_VALUE)
-                    .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -233,6 +233,9 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
     public javax.swing.JButton BtnConfirmar;
     private javax.swing.JPanel Encabezado;
     private javax.swing.JPanel EncabezadoPanel;
+    private javax.swing.JPanel EncabezadoPanel1;
+    private javax.swing.JPanel EncabezadoPanel2;
+    private javax.swing.JPanel EncabezadoPanel3;
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel5;
@@ -245,6 +248,9 @@ public class ViewMetodoPago2 extends javax.swing.JFrame {
     private javax.swing.JLabel tituloBotonera12;
     private javax.swing.JLabel tituloBotonera13;
     private javax.swing.JLabel tituloBotonera14;
+    private javax.swing.JLabel tituloBotonera2;
+    private javax.swing.JLabel tituloBotonera3;
+    private javax.swing.JLabel tituloBotonera4;
     private javax.swing.JLabel tituloEncabezado;
     // End of variables declaration//GEN-END:variables
 }

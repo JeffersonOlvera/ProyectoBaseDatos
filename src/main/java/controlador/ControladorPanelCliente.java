@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-import modelo.Paquete;
 import modelo.VentanaUtils;
 import vista.ViewEntregaPaquete;
 import vista.ViewEntregaPaquete2;
@@ -12,7 +11,6 @@ import vista.ViewMetodoPago;
 import vista.ViewMetodoPago2;
 import vista.ViewPanelCliente;
 import vista.ViewNotificacionExito;
-import controlador.ControladorEntregaPaquetes;
 
 public class ControladorPanelCliente implements ActionListener {
 
@@ -21,7 +19,6 @@ public class ControladorPanelCliente implements ActionListener {
     private final ViewMetodoPago viewMetodoPago = new ViewMetodoPago();
     private final ViewMetodoPago2 viewMetodoPago2 = new ViewMetodoPago2();
     private ViewPanelCliente panelCliente = new ViewPanelCliente();
-     private ViewNotificacionExito noti = new ViewNotificacionExito("");
 
     public ControladorPanelCliente(ViewPanelCliente panelCliente) {
         this.panelCliente = panelCliente;
@@ -54,11 +51,7 @@ public class ControladorPanelCliente implements ActionListener {
 
         //Boton Historial Envios
         if (e.getSource() == panelCliente.BtnHistorialEnvios) {
-            enviarNoti("Hola");
-        } else if (e.getSource() == noti.BtnMenu) {
-            VentanaUtils.mostrarVentana(panelCliente, "Panel Cliente");
-        } else if (e.getSource() == noti.BtnNewEntrega) {
-            VentanaUtils.mostrarVentana(viewEntregaPaquete, "Panel Cliente");
+                        enviarNoti("Hola");
         }
         // Boton Seguimiento Paquete
         if (e.getSource() == panelCliente.BtnSeguimientoPaquete) {

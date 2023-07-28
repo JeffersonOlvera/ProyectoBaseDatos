@@ -17,8 +17,6 @@ public class ControladorEntregaPaquetes implements ActionListener {
     ViewMetodoPago viewMetodoPago = new ViewMetodoPago();
     ViewMetodoPago2 viewMetodoPago2 = new ViewMetodoPago2();
 
-    ;
-
     public ControladorEntregaPaquetes(ViewEntregaPaquete viewEntegaPaquete, ViewEntregaPaquete2 viewEntregaPaquete2) {
         this.viewEntregaPaquete = viewEntegaPaquete;
         this.viewEntregaPaquete2 = viewEntregaPaquete2;
