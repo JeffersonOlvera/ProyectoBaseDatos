@@ -11,17 +11,17 @@ import modelo.VentanaUtils;
 import vista.ViewRegistroCliente;
 import vista.ViewRegistroConductor;
 import vista.ViewSeleccionUsuario;
-import vista.ViewPanelCliente;
-import vista.ViewPanelConductor;
+import vista.PanelCliente;
+import vista.PanelConductor;
 
 public class ControladorLogin implements ActionListener {
 
     private ViewLogin login = new ViewLogin();
     private GestionUsuarios gestionUsuarios = new GestionUsuarios();
     private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
-    private final ViewPanelCliente panelCliente = new ViewPanelCliente();
+    private final PanelCliente panelCliente = new PanelCliente();
     private final Paquete paquete = new Paquete();
-    private final ViewPanelConductor panelConductor = new ViewPanelConductor();
+    private final PanelConductor panelConductor = new PanelConductor();
     private final ViewRegistroConductor registroConductor = new ViewRegistroConductor();
     private final ViewRegistroCliente registroCliente = new ViewRegistroCliente();
 
@@ -62,7 +62,7 @@ public class ControladorLogin implements ActionListener {
                 } //Inicio como Conductor
                 else if (tipoUsuario.equalsIgnoreCase("conductor")) {
                     VentanaUtils.cerrarVentana(login);
-                    ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor, paquete);
+                    ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
                     controladorPanelConductor.run();
                 }
             }//Credenciales incorrectos 

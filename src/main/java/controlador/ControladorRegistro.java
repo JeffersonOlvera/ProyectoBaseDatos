@@ -8,8 +8,8 @@ import modelo.Cliente;
 import modelo.Conductor;
 import modelo.GestionUsuarios;
 import modelo.VentanaUtils;
-import vista.ViewPanelCliente;
-import vista.ViewPanelConductor;
+import vista.PanelCliente;
+import vista.PanelConductor;
 import vista.ViewSeleccionUsuario;
 import vista.ViewRegistroConductor;
 import vista.ViewRegistroCliente;
@@ -20,8 +20,8 @@ public class ControladorRegistro implements ActionListener {
     private ViewRegistroConductor registroConductor = new ViewRegistroConductor();
     private ViewRegistroCliente registroCliente = new ViewRegistroCliente();
     private GestionUsuarios gestionUsuarios = new GestionUsuarios();
-    private final ViewPanelCliente panelCliente = new ViewPanelCliente();
-    private final ViewPanelConductor panelConductor = new ViewPanelConductor();
+    private final PanelCliente panelCliente = new PanelCliente();
+    private final PanelConductor panelConductor = new PanelConductor();
 
     public ControladorRegistro(ViewSeleccionUsuario seleccionUsuario, ViewRegistroConductor registroConductor, ViewRegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
         this.seleccionUsuario = seleccionUsuario;
@@ -49,7 +49,6 @@ public class ControladorRegistro implements ActionListener {
 
         if (GestionUsuarios.registroCliente(cliente)) {
             JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
-
         } else {
             JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
         }
@@ -90,7 +89,6 @@ public class ControladorRegistro implements ActionListener {
         if (e.getSource() == seleccionUsuario.btnCliente) {
             VentanaUtils.cerrarVentana(seleccionUsuario);
             VentanaUtils.mostrarVentana(registroCliente, "Registro Cliente");
-
         }
         //Logica para el registro del cliente
         if (e.getSource() == registroCliente.btnRegistroCliente) {
@@ -99,11 +97,10 @@ public class ControladorRegistro implements ActionListener {
             if (validacionContrasena(contrasena1, contrasena2)) {
                 registrarCliente();
                 VentanaUtils.cerrarVentana(registroCliente);
-                ViewPanelCliente panelCliente = new ViewPanelCliente();
-                VentanaUtils.mostrarVentana(panelCliente, "Panel Conductor");
+                ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
+                controladorPanelCliente.run();
             }
         }
-
         //Seleccion usuario conductor
         if (e.getSource() == seleccionUsuario.btnConductor) {
             VentanaUtils.cerrarVentana(seleccionUsuario);
@@ -117,8 +114,8 @@ public class ControladorRegistro implements ActionListener {
             if (validacionContrasena(contrasena1, contrasena2)) {
                 registrarConductor();
                 VentanaUtils.cerrarVentana(registroConductor);
-                ViewPanelConductor panelConductor = new ViewPanelConductor();
-                VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
+                ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
+                controladorPanelConductor.run();
             }
         }
     }

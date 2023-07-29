@@ -5,18 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-import modelo.Paquete;
 import modelo.VentanaUtils;
-import vista.ViewPanelConductor;
+import vista.PanelConductor;
 
 public class ControladorPanelConductor implements ActionListener{
 
-    ViewPanelConductor panelConductor;
-    Paquete paquete;
+    PanelConductor panelConductor;
 
-    public ControladorPanelConductor(ViewPanelConductor panelConductor, Paquete paquete) {
+    public ControladorPanelConductor(PanelConductor panelConductor) {
         this.panelConductor = panelConductor;
-        this.paquete = paquete;
         
         this.panelConductor.BtnEntregaAsignada.addActionListener(this);
         this.panelConductor.BtnDevolucionPendiente.addActionListener(this);
