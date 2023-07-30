@@ -18,14 +18,18 @@ vista\DriverCheckEntrega$2.class
 vista\DriverDevoluciones$1.class
 modelo\Paquete.class
 vista\ViewRegistroCliente$1.class
+controlador\DriverEntregasAsig$1.class
 vista\ClientEntregaPaquete$2.class
 vista\ViewPrincipal.class
 vista\Tabla$1.class
 vista\PanelConductor$1.class
 controlador\ClienteHistorialEnvio.class
+vista\ButtonRenderer.class
 vista\ClientMetPago2.class
 vista\DriverEntregasAsignadas$2.class
+vista\Render2.class
 vista\DriverPerfil$2.class
+controlador\DriverDevolucion$1.class
 modelo\Usuario.class
 controlador\DriverEntregasAsig.class
 modelo\VentanaUtils.class
@@ -62,6 +66,7 @@ vista\DriverCheckEntrega$3.class
 vista\ClientEntregaPaquete2$1.class
 vista\ClientEntregaPaquete$1.class
 modelo\Conductor.class
+vista\Render3.class
 vista\ClientMetPago$2.class
 vista\ClientEntregaPaquete$4.class
 vista\Tabla$2.class
@@ -85,6 +90,7 @@ vista\ClientHistorial$5.class
 vista\ViewSeleccionUsuario$2.class
 vista\ClientSegPaquete$2.class
 vista\ViewPrincipal$1.class
+vista\Tabla$4.class
 vista\ClientDevolucion.class
 vista\DriverCheckEntrega$1.class
 vista\Render.class
@@ -109,6 +115,7 @@ vista\DriverCheckEntrega.class
 modelo\Cliente.class
 vista\ClientDevolucion$1.class
 controlador\ClienteEntregaPaquetes.class
+controlador\DriverHistorialDriver$1.class
 controlador\ControladorLogin.class
 vista\Tabla$3.class
 vista\ClientSegPaquete.class

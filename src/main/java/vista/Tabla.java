@@ -15,7 +15,7 @@ public class Tabla {
 
         JButton btnSeleccionar = new JButton("Seleccionar");
         btnSeleccionar.setBackground(new java.awt.Color(97, 150, 171));
-        btnSeleccionar.setFont(new java.awt.Font("Arial Black", 1, 12));
+        btnSeleccionar.setFont(new java.awt.Font("Arial Black", 1, 11));
         btnSeleccionar.setForeground(new java.awt.Color(255, 255, 255));
 
         btnSeleccionar.addActionListener(new ActionListener() {
@@ -44,18 +44,14 @@ public class Tabla {
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
-
-            /*           @Override
-            public Class<?> getColumnClass(int columnIndex) {
-                return getValueAt(0, columnIndex).getClass();
-            }*/
         };
         tabla.setModel(d);
         tabla.setRowSelectionAllowed(false);
+        tabla.setRowHeight(25);
     }
 
     public void tablaSeleccionar2(JTable tabla) {
-        tabla.setDefaultRenderer(Object.class, new Render());
+        tabla.setDefaultRenderer(Object.class, new Render2());
 
         JButton btnSeleccionar = new JButton("Seleccionar");
         btnSeleccionar.setBackground(new java.awt.Color(97, 150, 171));
@@ -76,22 +72,18 @@ public class Tabla {
         };
         tabla.setModel(d);
         tabla.setRowSelectionAllowed(false);
+        tabla.setRowHeight(25);
     }
 
     public void tablaNormal(JTable tabla) {
-        tabla.setDefaultRenderer(Object.class, new Render());
-
-        JButton btnSeleccionar = new JButton("Seleccionar");
-        btnSeleccionar.setBackground(new java.awt.Color(97, 150, 171));
-        btnSeleccionar.setFont(new java.awt.Font("Arial Black", 1, 12));
-        btnSeleccionar.setForeground(new java.awt.Color(255, 255, 255));
+        tabla.setDefaultRenderer(Object.class, new Render3());
 
         DefaultTableModel d = new DefaultTableModel(
                 new Object[][]{
-                    {"b1", "b1", "c1", "d1", 542, "Activo", btnSeleccionar},
-                    {"b2", "b2", "c2", "d2", 543, "Inactivo", btnSeleccionar}
+                    {"b1", "b1", "95236", "d1", "Entregado", "av. 123", "av.356", 8756},
+                    {"b2", "b2", "95237", "d2", "Cancelado", "av. 321", "av.954", 957}
                 },
-                new String[]{"Nombres", "Apellidos", "Punto recogida", "Teléfono", "Código", "Disponibilidad", ""}
+                new String[]{"Nombres", "Apellidos", "DNI", "Teléfono", "Estado", "D.Recogida", "D.Entrega", "Código"}
         ) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -100,5 +92,6 @@ public class Tabla {
         };
         tabla.setModel(d);
         tabla.setRowSelectionAllowed(false);
+        tabla.setRowHeight(25);
     }
 }
