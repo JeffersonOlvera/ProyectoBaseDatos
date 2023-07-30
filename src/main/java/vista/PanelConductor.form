@@ -30,6 +30,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Component id="Botonera" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -113,8 +114,8 @@
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="BtnEntregaAsignada" linkSize="1" alignment="2" min="-2" pref="238" max="-2" attributes="0"/>
                           <Component id="BtnDevolucionPendiente" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="BtnHistorialEntregas1" linkSize="1" alignment="2" min="-2" pref="236" max="-2" attributes="0"/>
                           <Component id="BtnHistorialEntregas" linkSize="1" alignment="2" min="-2" pref="236" max="-2" attributes="0"/>
+                          <Component id="BtnEditarPerfil" linkSize="1" alignment="2" min="-2" pref="236" max="-2" attributes="0"/>
                       </Group>
                       <Component id="tituloBotonera" linkSize="1" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
@@ -132,9 +133,9 @@
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="BtnDevolucionPendiente" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="BtnHistorialEntregas1" min="-2" pref="100" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="BtnHistorialEntregas" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="BtnEditarPerfil" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -205,7 +206,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnHistorialEntregas1">
+        <Component class="javax.swing.JButton" name="BtnHistorialEntregas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="1d" green="1d" red="1d" type="rgb"/>
@@ -226,7 +227,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnHistorialEntregas">
+        <Component class="javax.swing.JButton" name="BtnEditarPerfil">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="1d" green="1d" red="1d" type="rgb"/>

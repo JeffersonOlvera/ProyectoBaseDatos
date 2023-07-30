@@ -1,10 +1,15 @@
-
 package vista;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class DriverEntregasAsignadas extends javax.swing.JFrame {
 
+    Tabla t = new Tabla();
+
     public DriverEntregasAsignadas() {
         initComponents();
+        t.tablaSeleccionar1(tabla);
     }
 
     @SuppressWarnings("unchecked")
@@ -16,8 +21,9 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
         Panel = new javax.swing.JPanel();
         BtnMenu = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        BtnMenu1 = new javax.swing.JButton();
+        tabla = new javax.swing.JTable();
+        BtnResultados = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         EncabezadoPanel = new javax.swing.JPanel();
         tituloBotonera9 = new javax.swing.JLabel();
 
@@ -41,7 +47,7 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(iconoEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+                .addComponent(iconoEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE)
                 .addContainerGap())
         );
         EncabezadoLayout.setVerticalGroup(
@@ -52,7 +58,7 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        Panel.setBackground(new java.awt.Color(176, 202, 232));
+        Panel.setBackground(new java.awt.Color(255, 255, 255));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
         BtnMenu.setBackground(new java.awt.Color(29, 29, 29));
@@ -65,34 +71,64 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 102, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        tabla.setForeground(new java.awt.Color(0, 0, 0));
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombres", "Apellidos", "Punto recogida", "Punto entrega", "Receptor", "Teléfono", "Código", "Disponibilidad"
+                "Nombres", "Apellidos", "Punto recogida", "Punto entrega", "Receptor", "Teléfono", "Código", "Disponibilidad", ""
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        jScrollPane2.setViewportView(jTable1);
 
-        BtnMenu1.setBackground(new java.awt.Color(29, 29, 29));
-        BtnMenu1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        BtnMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        BtnMenu1.setText("Todos los resultados");
-        BtnMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla.setFocusable(false);
+        tabla.getTableHeader().setReorderingAllowed(false);
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tabla);
+
+        BtnResultados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resultados.png"))); // NOI18N
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnMenu1ActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -108,20 +144,23 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE)
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(BtnMenu1)))))
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnResultados)))))
                 .addContainerGap())
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnResultados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(BtnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -155,12 +194,9 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Encabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EncabezadoPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(EncabezadoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Encabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,19 +215,36 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnMenuActionPerformed
 
-    private void BtnMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenu1ActionPerformed
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+      
+        //detecta que el boton sea precionado
+        int column = tabla.getColumnModel().getColumnIndexAtX(evt.getX());
+        int row = evt.getY() / tabla.getRowHeight();
+        
+        if (row < tabla.getRowCount() && row>= 0 && column < tabla.getColumnCount()&& column >=0){
+            Object value = tabla.getValueAt(row,column);
+            if (value instanceof JButton){
+                ((JButton)value).doClick();
+                JButton boton = (JButton)value;
+                JOptionPane.showMessageDialog(null, "Hola");
+            }
+        }   
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnMenu1ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnMenu;
-    public javax.swing.JButton BtnMenu1;
+    public javax.swing.JLabel BtnResultados;
     private javax.swing.JPanel Encabezado;
     private javax.swing.JPanel EncabezadoPanel;
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tabla;
     private javax.swing.JLabel tituloBotonera9;
     // End of variables declaration//GEN-END:variables
 }

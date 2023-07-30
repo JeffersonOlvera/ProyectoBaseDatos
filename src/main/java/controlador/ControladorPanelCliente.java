@@ -8,8 +8,7 @@ import vista.ClientDevolucion;
 import vista.ClientEntregaPaquete;
 import vista.ClientEntregaPaquete2;
 import vista.ClientFactura;
-import vista.ClientMetPago;
-import vista.ClientMetPago2;
+
 import vista.PanelCliente;
 import vista.ViewNotificacionExito;
 import vista.ClientHistorial;
@@ -17,10 +16,6 @@ import vista.ClientSegPaquete;
 
 public class ControladorPanelCliente implements ActionListener {
 
-    private final ClientEntregaPaquete viewEntregaPaquete = new ClientEntregaPaquete();
-    private final ClientEntregaPaquete2 viewEntregaPaquete2 = new ClientEntregaPaquete2();
-    private final ClientMetPago viewMetodoPago = new ClientMetPago();
-    private final ClientMetPago2 viewMetodoPago2 = new ClientMetPago2();
     private PanelCliente panelCliente = new PanelCliente();
 
     public ControladorPanelCliente(PanelCliente panelCliente) {
@@ -33,11 +28,6 @@ public class ControladorPanelCliente implements ActionListener {
 
     public void run() {
         VentanaUtils.mostrarVentana(panelCliente, "Panel Cliente");
-    }
-
-    public void enviarNoti(String mensaje) {
-        ViewNotificacionExito newNotificacion = new ViewNotificacionExito(mensaje);
-        VentanaUtils.notificacionExito(newNotificacion);
     }
 
     //Botones

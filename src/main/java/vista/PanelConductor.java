@@ -17,8 +17,8 @@ public class PanelConductor extends javax.swing.JFrame {
         tituloBotonera = new javax.swing.JLabel();
         BtnEntregaAsignada = new javax.swing.JButton();
         BtnDevolucionPendiente = new javax.swing.JButton();
-        BtnHistorialEntregas1 = new javax.swing.JButton();
         BtnHistorialEntregas = new javax.swing.JButton();
+        BtnEditarPerfil = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -84,20 +84,20 @@ public class PanelConductor extends javax.swing.JFrame {
             }
         });
 
-        BtnHistorialEntregas1.setBackground(new java.awt.Color(29, 29, 29));
-        BtnHistorialEntregas1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        BtnHistorialEntregas1.setForeground(new java.awt.Color(255, 255, 255));
-        BtnHistorialEntregas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
-        BtnHistorialEntregas1.setText("Historial de entregas");
-        BtnHistorialEntregas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
         BtnHistorialEntregas.setBackground(new java.awt.Color(29, 29, 29));
         BtnHistorialEntregas.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         BtnHistorialEntregas.setForeground(new java.awt.Color(255, 255, 255));
-        BtnHistorialEntregas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconEditarPerfil.png"))); // NOI18N
-        BtnHistorialEntregas.setText("Editar perfil");
+        BtnHistorialEntregas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon5.png"))); // NOI18N
+        BtnHistorialEntregas.setText("Historial de entregas");
         BtnHistorialEntregas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnHistorialEntregas.setIconTextGap(6);
+
+        BtnEditarPerfil.setBackground(new java.awt.Color(29, 29, 29));
+        BtnEditarPerfil.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        BtnEditarPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEditarPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconEditarPerfil.png"))); // NOI18N
+        BtnEditarPerfil.setText("Editar perfil");
+        BtnEditarPerfil.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnEditarPerfil.setIconTextGap(6);
 
         javax.swing.GroupLayout BotoneraLayout = new javax.swing.GroupLayout(Botonera);
         Botonera.setLayout(BotoneraLayout);
@@ -109,13 +109,13 @@ public class PanelConductor extends javax.swing.JFrame {
                     .addGroup(BotoneraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                         .addComponent(BtnEntregaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(BtnDevolucionPendiente)
-                        .addComponent(BtnHistorialEntregas1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BtnHistorialEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnHistorialEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnEditarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tituloBotonera, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        BotoneraLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BtnDevolucionPendiente, BtnEntregaAsignada, BtnHistorialEntregas, BtnHistorialEntregas1, tituloBotonera});
+        BotoneraLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BtnDevolucionPendiente, BtnEditarPerfil, BtnEntregaAsignada, BtnHistorialEntregas, tituloBotonera});
 
         BotoneraLayout.setVerticalGroup(
             BotoneraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +127,9 @@ public class PanelConductor extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(BtnDevolucionPendiente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(BtnHistorialEntregas1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addComponent(BtnHistorialEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BtnEditarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -164,6 +164,7 @@ public class PanelConductor extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Botonera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -185,9 +186,9 @@ public class PanelConductor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Botonera;
     public javax.swing.JButton BtnDevolucionPendiente;
+    public javax.swing.JButton BtnEditarPerfil;
     public javax.swing.JButton BtnEntregaAsignada;
     public javax.swing.JButton BtnHistorialEntregas;
-    public javax.swing.JButton BtnHistorialEntregas1;
     private javax.swing.JPanel Encabezado;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel1;
