@@ -13,6 +13,7 @@ vista\ViewRegistroConductor$1.class
 vista\ClientSegPaquete$6.class
 vista\ViewSeleccionUsuario.class
 vista\ViewSeleccionUsuario$1.class
+modelo\Validaciones.class
 vista\ClientHistorial$1.class
 vista\DriverCheckEntrega$2.class
 vista\DriverDevoluciones$1.class

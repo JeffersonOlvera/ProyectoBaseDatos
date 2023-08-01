@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.Conductor;
 import modelo.GestionUsuarios;
+import modelo.Validaciones;
 import modelo.VentanaUtils;
 import vista.PanelCliente;
 import vista.PanelConductor;
@@ -31,7 +32,7 @@ public class ControladorRegistro implements ActionListener {
 
         this.seleccionUsuario.btnCliente.addActionListener(this);
         this.seleccionUsuario.btnConductor.addActionListener(this);
-        this.registroConductor.btnRegistroConductor.addActionListener(this);
+        this.registroConductor.BtnRegistroConductor.addActionListener(this);
         this.registroCliente.btnRegistroCliente.addActionListener(this);
     }
 
@@ -40,46 +41,48 @@ public class ControladorRegistro implements ActionListener {
     }
 
     //Registro del Cliente
-    public void registrarCliente() {
+    public boolean registrarCliente() {
         Cliente cliente = new Cliente();
 
         cliente.setNombre(registroCliente.txtNombre.getText());
+        cliente.setApellido(registroCliente.txtApellido.getText());
         cliente.setCorreo(registroCliente.txtCorreo.getText());
-        cliente.setContrasena(registroCliente.txtContrasena1.getText());
+        cliente.setContrasena(registroCliente.txtContrasena.getText());
 
-        if (GestionUsuarios.registroCliente(cliente)) {
+        if (Validaciones.verificarCorreoRegistrado(cliente.getCorreo())) {
+            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
+        } else if (GestionUsuarios.registroCliente(cliente)) {
             JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
+            return true;
         } else {
             JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
         }
+        return false;
+
     }
 
     //Registro del conductor 
-    public void registrarConductor() {
+    public boolean registrarConductor() {
         Conductor conductor = new Conductor();
 
         conductor.setNombre(registroConductor.txtNombre.getText());
+        conductor.setApellido(registroConductor.txtApellido.getText());
         conductor.setCorreo(registroConductor.txtCorreo.getText());
-        conductor.setContrasena(registroConductor.txtContrasena1.getText());
         conductor.setModeloCamion(registroConductor.txtModeloCamion.getText());
-        conductor.setNumPlaca(registroConductor.txtMatricula.getText());
+        conductor.setNumPlaca(registroConductor.txtNumPlaca.getText());
+        conductor.setContrasena(registroConductor.txtContrasena.getText());
 
-        if (GestionUsuarios.registroConductor(conductor)) {
+        if (Validaciones.verificarCorreoRegistrado(conductor.getCorreo())) {
+            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
+        } else if (Validaciones.verificarPlaca(conductor.getNumPlaca())) {
+            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese num de placa.");
+        } else if (GestionUsuarios.registroConductor(conductor)) {
             JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al registrar el conductor.");
-
-        }
-    }
-
-    //Valida que las dos contraseñas sean iguale
-    public boolean validacionContrasena(String contrasena1, String contrasena2) {
-        if (contrasena1.equals(contrasena2)) {
             return true;
         } else {
-            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-            return false;
+            JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
         }
+        return false;
     }
 
     //Acciones de los botones
@@ -92,13 +95,15 @@ public class ControladorRegistro implements ActionListener {
         }
         //Logica para el registro del cliente
         if (e.getSource() == registroCliente.btnRegistroCliente) {
-            String contrasena1 = registroCliente.txtContrasena1.getText();
+            String contrasena1 = registroCliente.txtContrasena.getText();
             String contrasena2 = registroCliente.txtContrasena2.getText();
-            if (validacionContrasena(contrasena1, contrasena2)) {
-                registrarCliente();
-                VentanaUtils.cerrarVentana(registroCliente);
-                ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
-                controladorPanelCliente.run();
+
+            if (Validaciones.validacionContrasena(contrasena1, contrasena2)) {
+                if (registrarCliente()) {
+                    VentanaUtils.cerrarVentana(registroCliente);
+                    ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
+                    controladorPanelCliente.run();
+                }
             }
         }
         //Seleccion usuario conductor
@@ -108,15 +113,17 @@ public class ControladorRegistro implements ActionListener {
 
         }
         //Logica para el registro del conductor
-        if (e.getSource() == registroConductor.btnRegistroConductor) {
-            String contrasena1 = registroConductor.txtContrasena1.getText();
+        if (e.getSource() == registroConductor.BtnRegistroConductor) {
+            String contrasena1 = registroConductor.txtContrasena.getText();
             String contrasena2 = registroConductor.txtContrasena2.getText();
-            if (validacionContrasena(contrasena1, contrasena2)) {
-                registrarConductor();
-                VentanaUtils.cerrarVentana(registroConductor);
-                ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
-                controladorPanelConductor.run();
+            if (Validaciones.validacionContrasena(contrasena1, contrasena2)) {
+                if (registrarConductor()) {
+                    VentanaUtils.cerrarVentana(registroConductor);
+                    ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
+                    controladorPanelConductor.run();
+                }
             }
         }
     }
+
 }
