@@ -66,9 +66,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="162" max="32767" attributes="0"/>
+                  <EmptySpace pref="158" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -141,7 +141,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtContrasena" max="32767" attributes="0"/>
                               <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNumPlaca" alignment="2" max="32767" attributes="0"/>
                               <Component id="jLabel4" alignment="2" max="32767" attributes="0"/>
                               <Component id="txtApellido" alignment="2" max="32767" attributes="0"/>
                               <Component id="txtCorreo" alignment="2" max="32767" attributes="0"/>
@@ -155,6 +154,7 @@
                               <Component id="jLabel5" alignment="2" min="-2" pref="178" max="-2" attributes="0"/>
                               <Component id="txtContrasena2" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNumPlaca" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -187,7 +187,7 @@
                           <Component id="txtModeloCamion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           <Component id="txtNumPlaca" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
@@ -330,11 +330,6 @@
                     <Property name="text" type="java.lang.String" value="Apellido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JPasswordField" name="txtNumPlaca">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
                 <Component class="javax.swing.JTextField" name="txtModeloCamion">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -365,8 +360,13 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
+                    <Property name="text" type="java.lang.String" value="Confirmar contrase&#xf1;a"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtNumPlaca">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

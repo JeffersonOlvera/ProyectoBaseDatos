@@ -40,37 +40,40 @@ public class ControladorLogin implements ActionListener {
 
     public String login() {
         String correo = login.txtCorreo.getText();
-        String contrasena = login.txtContrasena.getText();
+        String contrasenia = login.txtContrasena.getText();
 
-        String tipoUsuario = GestionUsuarios.autentificacionUsuario(correo, contrasena);
+        String tipoUsuario = GestionUsuarios.autentificacionUsuario(correo, contrasenia);
+
         return tipoUsuario;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //Boton de inicio de sesion
+        // Boton de inicio de sesion
         if (e.getSource() == login.btnLogin) {
+
             String tipoUsuario = login();
             if (tipoUsuario != null) {
                 JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso como " + tipoUsuario);
-                //Inicio como Cliente
+
+                // Inicio como Cliente
                 if (tipoUsuario.equalsIgnoreCase("cliente")) {
                     VentanaUtils.cerrarVentana(login);
                     ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
                     controladorPanelCliente.run();
-
-                } //Inicio como Conductor
+                } // Inicio como Conductor
                 else if (tipoUsuario.equalsIgnoreCase("conductor")) {
                     VentanaUtils.cerrarVentana(login);
                     ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
                     controladorPanelConductor.run();
                 }
-            }//Credenciales incorrectos 
+            } // Credenciales incorrectos / incompletos
             else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
             }
-
-        }//Boton de registro
+ 
+        }// Boton de registro
         if (e.getSource() == login.btnRegistro) {
             VentanaUtils.cerrarVentana(login);
             ControladorRegistro controladorRegistro = new ControladorRegistro(seleccionUsuario, registroConductor, registroCliente, gestionUsuarios);

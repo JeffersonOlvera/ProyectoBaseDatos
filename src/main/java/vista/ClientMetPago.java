@@ -12,6 +12,7 @@ public class ClientMetPago extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Encabezado = new javax.swing.JPanel();
         tituloEncabezado = new javax.swing.JLabel();
         iconoEncabezado = new javax.swing.JLabel();
@@ -28,6 +29,9 @@ public class ClientMetPago extends javax.swing.JFrame {
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuario.png")));
+
+        buttonGroup1.add(RadEfectivo);
+        buttonGroup1.add(RadTarjeta);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel - Cliente");
@@ -218,6 +222,7 @@ public class ClientMetPago extends javax.swing.JFrame {
     private javax.swing.JPanel EncabezadoPanel;
     public javax.swing.JRadioButton RadEfectivo;
     public javax.swing.JRadioButton RadTarjeta;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

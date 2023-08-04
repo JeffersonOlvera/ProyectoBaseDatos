@@ -45,6 +45,44 @@ public class Validaciones {
         return false;
     }
 
+    public static boolean verificarCedula(String cedula) {
+        Connection connection = ConexionBD.conectar();
+        PreparedStatement statement = null;
+        ResultSet result = null;
+
+        String sql = "SELECT COUNT(*) AS count FROM Remitente WHERE Cedula = ?";
+
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, cedula);
+            result = statement.executeQuery();
+
+            if (result.next()) {
+                int count = result.getInt("count");
+                return count > 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Cerrar recursos
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
     public static boolean verificarPlaca(String placa) {
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
@@ -81,7 +119,7 @@ public class Validaciones {
         }
         return false;
     }
-    
+
     //Valida que las dos contraseñas sean iguale
     public static boolean validacionContrasena(String contrasena1, String contrasena2) {
         if (contrasena1.equals(contrasena2)) {
@@ -91,7 +129,5 @@ public class Validaciones {
             return false;
         }
     }
-    
-    
 
 }

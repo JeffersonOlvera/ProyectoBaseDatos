@@ -2,7 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import modelo.Cliente;
 import modelo.Conductor;
@@ -34,10 +37,16 @@ public class ControladorRegistro implements ActionListener {
         this.seleccionUsuario.btnConductor.addActionListener(this);
         this.registroConductor.BtnRegistroConductor.addActionListener(this);
         this.registroCliente.btnRegistroCliente.addActionListener(this);
-    }
 
-    public void run() {
-        VentanaUtils.mostrarVentana(seleccionUsuario, "Seleccion usuario");
+        // Aplicando el limites de caracteres 
+        aplicarLimitadorDeLongitud(registroConductor.txtModeloCamion, 100);
+        aplicarLimitadorDeLongitud(registroConductor.txtNumPlaca, 8);
+        aplicarLimitadorDeLongitud(registroConductor.txtContrasena, 20);
+        aplicarLimitadorDeLongitud(registroConductor.txtContrasena2, 20);
+
+        aplicarLimitadorDeLongitud(registroCliente.txtContrasena, 20);
+        aplicarLimitadorDeLongitud(registroCliente.txtContrasena2, 20);
+
     }
 
     //Registro del Cliente
@@ -48,17 +57,24 @@ public class ControladorRegistro implements ActionListener {
         cliente.setApellido(registroCliente.txtApellido.getText());
         cliente.setCorreo(registroCliente.txtCorreo.getText());
         cliente.setContrasena(registroCliente.txtContrasena.getText());
+        String contrasenia = cliente.getContrasena();
+        String contrasenia2 = registroCliente.txtContrasena2.getText();
 
-        if (Validaciones.verificarCorreoRegistrado(cliente.getCorreo())) {
-            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
-        } else if (GestionUsuarios.registroCliente(cliente)) {
-            JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
-            return true;
+        if (clienteNoVacio(cliente)) {
+            if ((Validaciones.validacionContrasena(contrasenia, contrasenia2))) {
+                if (Validaciones.verificarCorreoRegistrado(cliente.getCorreo())) {
+                    JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
+                } else if (GestionUsuarios.registroCliente(cliente)) {
+                    JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
+                }
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
+            JOptionPane.showMessageDialog(null, "Complete el formulario");
         }
         return false;
-
     }
 
     //Registro del conductor 
@@ -71,16 +87,24 @@ public class ControladorRegistro implements ActionListener {
         conductor.setModeloCamion(registroConductor.txtModeloCamion.getText());
         conductor.setNumPlaca(registroConductor.txtNumPlaca.getText());
         conductor.setContrasena(registroConductor.txtContrasena.getText());
+        String contrasenia = conductor.getContrasena();
+        String contrasenia2 = registroConductor.txtContrasena2.getText();
 
-        if (Validaciones.verificarCorreoRegistrado(conductor.getCorreo())) {
-            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
-        } else if (Validaciones.verificarPlaca(conductor.getNumPlaca())) {
-            JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese num de placa.");
-        } else if (GestionUsuarios.registroConductor(conductor)) {
-            JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
-            return true;
+        if (conductorNoVacio(conductor)) {
+            if ((Validaciones.validacionContrasena(contrasenia, contrasenia2))) {
+                if (Validaciones.verificarCorreoRegistrado(conductor.getCorreo())) {
+                    JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
+                } else if (Validaciones.verificarPlaca(conductor.getNumPlaca())) {
+                    JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese num de placa.");
+                } else if (GestionUsuarios.registroConductor(conductor)) {
+                    JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
+                }
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Error al registrar el cliente.");
+            JOptionPane.showMessageDialog(null, "Complete el formulario");
         }
         return false;
     }
@@ -95,16 +119,12 @@ public class ControladorRegistro implements ActionListener {
         }
         //Logica para el registro del cliente
         if (e.getSource() == registroCliente.btnRegistroCliente) {
-            String contrasena1 = registroCliente.txtContrasena.getText();
-            String contrasena2 = registroCliente.txtContrasena2.getText();
-
-            if (Validaciones.validacionContrasena(contrasena1, contrasena2)) {
-                if (registrarCliente()) {
-                    VentanaUtils.cerrarVentana(registroCliente);
-                    ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
-                    controladorPanelCliente.run();
-                }
+            if (registrarCliente()) {
+                VentanaUtils.cerrarVentana(registroCliente);
+                ControladorPanelCliente controladorPanelCliente = new ControladorPanelCliente(panelCliente);
+                controladorPanelCliente.run();
             }
+
         }
         //Seleccion usuario conductor
         if (e.getSource() == seleccionUsuario.btnConductor) {
@@ -114,16 +134,39 @@ public class ControladorRegistro implements ActionListener {
         }
         //Logica para el registro del conductor
         if (e.getSource() == registroConductor.BtnRegistroConductor) {
-            String contrasena1 = registroConductor.txtContrasena.getText();
-            String contrasena2 = registroConductor.txtContrasena2.getText();
-            if (Validaciones.validacionContrasena(contrasena1, contrasena2)) {
-                if (registrarConductor()) {
-                    VentanaUtils.cerrarVentana(registroConductor);
-                    ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
-                    controladorPanelConductor.run();
-                }
+            if (registrarConductor()) {
+                VentanaUtils.cerrarVentana(registroConductor);
+                ControladorPanelConductor controladorPanelConductor = new ControladorPanelConductor(panelConductor);
+                controladorPanelConductor.run();
             }
         }
+    }
+
+    public void run() {
+        VentanaUtils.mostrarVentana(seleccionUsuario, "Seleccion usuario");
+    }
+
+    public boolean clienteNoVacio(Cliente cliente) {
+        return !"".equals(cliente.getNombre()) && !"".equals(cliente.getApellido())
+                && !"".equals(cliente.getCorreo()) && !"".equals(cliente.getContrasena());
+    }
+
+    public boolean conductorNoVacio(Conductor conductor) {
+        return !"".equals(conductor.getNombre()) && !"".equals(conductor.getApellido())
+                && !"".equals(conductor.getCorreo()) && !"".equals(conductor.getModeloCamion())
+                && !"".equals(conductor.getNumPlaca()) && !"".equals(conductor.getContrasena());
+    }
+
+    // funcion que recibe el textfield y el maximo de caracteres permitidos
+    private void aplicarLimitadorDeLongitud(JTextField campo, int maximoCaracteres) {
+        campo.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (campo.getText().length() >= maximoCaracteres) {
+                    e.consume();
+                }
+            }
+        });
     }
 
 }

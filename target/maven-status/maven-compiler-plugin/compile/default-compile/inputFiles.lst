@@ -1,5 +1,6 @@
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientDevolucion.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientMetPago2.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Remitente.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewLogin.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorPanelCliente.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\DriverDevolucion.java
@@ -17,7 +18,6 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\DriverHistorialDriver.ja
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverAsignarDriver.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ClienteHistorialEnvio.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Validaciones.java
-D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ButtonRenderer.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Conductor.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Usuario.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewRegistroConductor.java
@@ -26,6 +26,7 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ClienteSeguimiento.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\Render2.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewPrincipal.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\VentanaUtils.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Envios.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientEntregaPaquete2.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverDevoluciones.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorRegistro.java
@@ -34,6 +35,7 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\GestionUsuarios.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientFactura.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientMetPago.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\Tabla.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Destinatario.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientSegPaquete.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientHistorial.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorPanelConductor.java

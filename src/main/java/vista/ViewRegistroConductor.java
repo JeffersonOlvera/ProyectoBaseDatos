@@ -27,11 +27,11 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtNumPlaca = new javax.swing.JPasswordField();
         txtModeloCamion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtContrasena2 = new javax.swing.JPasswordField();
         jLabel14 = new javax.swing.JLabel();
+        txtNumPlaca = new javax.swing.JTextField();
         BtnRegistroConductor = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
@@ -99,7 +99,7 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel14.setText("Contraseña");
+        jLabel14.setText("Confirmar contraseña");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -114,7 +114,6 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtContrasena)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(txtNumPlaca, javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.Alignment.CENTER)
@@ -127,7 +126,8 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
                     .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtContrasena2)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNumPlaca))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -157,7 +157,7 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
                 .addComponent(txtModeloCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addGap(4, 4, 4)
+                .addGap(2, 2, 2)
                 .addComponent(txtNumPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
@@ -208,9 +208,9 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(154, 154, 154)
+                .addGap(158, 158, 158)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,6 +261,6 @@ public class ViewRegistroConductor extends javax.swing.JFrame {
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtModeloCamion;
     public javax.swing.JTextField txtNombre;
-    public javax.swing.JPasswordField txtNumPlaca;
+    public javax.swing.JTextField txtNumPlaca;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,9 +4,18 @@ import java.util.ArrayList;
 
 public class Conductor extends Usuario {
 
+    private int ID;
     private String modeloCamion = "";
     private String numPlaca = "";
     private ArrayList historialEnvios = new ArrayList();
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     /**
      * @return the modeloCamion
