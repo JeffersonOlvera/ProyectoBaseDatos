@@ -11,20 +11,24 @@ public class ClientDevolucion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGrupo = new javax.swing.ButtonGroup();
         Encabezado = new javax.swing.JPanel();
         iconoEncabezado = new javax.swing.JLabel();
         Panel = new javax.swing.JPanel();
         BtnConfirmar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        RadTarjeta = new javax.swing.JRadioButton();
-        RadEfectivo = new javax.swing.JRadioButton();
+        RadLlegoRoto = new javax.swing.JRadioButton();
+        RadNollego = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
+        txtCodEnvio = new javax.swing.JTextField();
         tituloBotonera8 = new javax.swing.JLabel();
         tituloBotonera10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+
+        btnGrupo.add(RadLlegoRoto);
+        btnGrupo.add(RadNollego);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel - Cliente");
@@ -72,18 +76,18 @@ public class ClientDevolucion extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(176, 202, 232));
 
-        RadTarjeta.setBackground(new java.awt.Color(176, 202, 232));
-        RadTarjeta.setForeground(new java.awt.Color(0, 0, 0));
-        RadTarjeta.setText("El producto llegó roto ");
-        RadTarjeta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RadLlegoRoto.setBackground(new java.awt.Color(176, 202, 232));
+        RadLlegoRoto.setForeground(new java.awt.Color(0, 0, 0));
+        RadLlegoRoto.setText("El producto llegó roto ");
+        RadLlegoRoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        RadEfectivo.setBackground(new java.awt.Color(176, 202, 232));
-        RadEfectivo.setForeground(new java.awt.Color(0, 0, 0));
-        RadEfectivo.setText("El paquete no llegó ");
-        RadEfectivo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RadEfectivo.addActionListener(new java.awt.event.ActionListener() {
+        RadNollego.setBackground(new java.awt.Color(176, 202, 232));
+        RadNollego.setForeground(new java.awt.Color(0, 0, 0));
+        RadNollego.setText("El paquete no llegó ");
+        RadNollego.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RadNollego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadEfectivoActionPerformed(evt);
+                RadNollegoActionPerformed(evt);
             }
         });
 
@@ -101,11 +105,11 @@ public class ClientDevolucion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RadTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(RadLlegoRoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(165, 165, 165)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addComponent(RadEfectivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(RadNollego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -117,8 +121,8 @@ public class ClientDevolucion extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RadTarjeta)
-                    .addComponent(RadEfectivo))
+                    .addComponent(RadLlegoRoto)
+                    .addComponent(RadNollego))
                 .addContainerGap())
         );
 
@@ -148,9 +152,9 @@ public class ClientDevolucion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(98, 151, 170));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtCodEnvio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtCodEnvioActionPerformed(evt);
             }
         });
 
@@ -179,7 +183,7 @@ public class ClientDevolucion extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(tituloBotonera10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(255, 255, 255))))
             .addComponent(jSeparator1)
         );
@@ -192,7 +196,7 @@ public class ClientDevolucion extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera10))
                 .addContainerGap())
         );
@@ -222,32 +226,33 @@ public class ClientDevolucion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtCodEnvioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodEnvioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtCodEnvioActionPerformed
 
     private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnConfirmarActionPerformed
 
-    private void RadEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadEfectivoActionPerformed
+    private void RadNollegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadNollegoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RadEfectivoActionPerformed
+    }//GEN-LAST:event_RadNollegoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnConfirmar;
     private javax.swing.JPanel Encabezado;
     private javax.swing.JPanel Panel;
-    public javax.swing.JRadioButton RadEfectivo;
-    public javax.swing.JRadioButton RadTarjeta;
+    public javax.swing.JRadioButton RadLlegoRoto;
+    public javax.swing.JRadioButton RadNollego;
+    public javax.swing.ButtonGroup btnGrupo;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel tituloBotonera10;
     private javax.swing.JLabel tituloBotonera8;
+    public javax.swing.JTextField txtCodEnvio;
     // End of variables declaration//GEN-END:variables
 }

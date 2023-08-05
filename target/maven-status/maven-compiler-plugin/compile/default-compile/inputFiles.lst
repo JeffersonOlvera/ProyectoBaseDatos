@@ -1,3 +1,4 @@
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\EntregarPaquete.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientDevolucion.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientMetPago2.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Remitente.java
@@ -9,11 +10,11 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ClienteEntregaPaquetes.j
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorNotificaciones.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewNotificacionExito.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\DriverEntregasAsig.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\main\ClasePrincipal.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\Render3.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\DriverEditarPerfil.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverPerfil.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\Render.java
-D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Paquete.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\DriverHistorialDriver.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverAsignarDriver.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ClienteHistorialEnvio.java
@@ -22,15 +23,20 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Conductor.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Usuario.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewRegistroConductor.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\Inicio.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\SeguimientoPaquete.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ClienteSeguimiento.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\Render2.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewPrincipal.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\PagoEfectivo.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\VentanaUtils.java
-D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Envios.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientEntregaPaquete2.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\PagoTarjetaCredito.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverDevoluciones.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorRegistro.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\AutenticacionResultado.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\MetodoPago.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientCalificacion.java
+D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\DatosEnvio.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\GestionUsuarios.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientFactura.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientMetPago.java
@@ -44,7 +50,6 @@ D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ViewRegistroCliente.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\ConexionBD.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\DriverEntregasAsignadas.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\controlador\ControladorLogin.java
-D:\Proyecto\ProyectoBaseDatos\src\main\java\Main.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\modelo\Cliente.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\ClientEntregaPaquete.java
 D:\Proyecto\ProyectoBaseDatos\src\main\java\vista\PanelCliente.java

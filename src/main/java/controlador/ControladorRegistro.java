@@ -39,13 +39,12 @@ public class ControladorRegistro implements ActionListener {
         this.registroCliente.btnRegistroCliente.addActionListener(this);
 
         // Aplicando el limites de caracteres 
-        aplicarLimitadorDeLongitud(registroConductor.txtModeloCamion, 100);
-        aplicarLimitadorDeLongitud(registroConductor.txtNumPlaca, 8);
-        aplicarLimitadorDeLongitud(registroConductor.txtContrasena, 20);
-        aplicarLimitadorDeLongitud(registroConductor.txtContrasena2, 20);
-
-        aplicarLimitadorDeLongitud(registroCliente.txtContrasena, 20);
-        aplicarLimitadorDeLongitud(registroCliente.txtContrasena2, 20);
+        Validaciones.aplicarLimitadorDeLongitud(registroConductor.txtModeloCamion, 100);
+        Validaciones.aplicarLimitadorDeLongitud(registroConductor.txtNumPlaca, 8);
+        Validaciones.aplicarLimitadorDeLongitud(registroConductor.txtContrasena, 20);
+        Validaciones.aplicarLimitadorDeLongitud(registroConductor.txtContrasena2, 20);
+        Validaciones.aplicarLimitadorDeLongitud(registroCliente.txtContrasena, 20);
+        Validaciones.aplicarLimitadorDeLongitud(registroCliente.txtContrasena2, 20);
 
     }
 
@@ -158,15 +157,4 @@ public class ControladorRegistro implements ActionListener {
     }
 
     // funcion que recibe el textfield y el maximo de caracteres permitidos
-    private void aplicarLimitadorDeLongitud(JTextField campo, int maximoCaracteres) {
-        campo.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                if (campo.getText().length() >= maximoCaracteres) {
-                    e.consume();
-                }
-            }
-        });
-    }
-
 }

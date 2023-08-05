@@ -1,10 +1,13 @@
 package modelo;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class Validaciones {
 
@@ -120,6 +123,43 @@ public class Validaciones {
         return false;
     }
 
+    public static boolean verificarCodigoEnvio(int codEnvio) {
+        Connection connection = ConexionBD.conectar();
+        PreparedStatement statement = null;
+        ResultSet result = null;
+
+        String sql = "SELECT COUNT(*) AS count FROM Envio WHERE Codigo = ?";
+
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, codEnvio);
+            result = statement.executeQuery();
+
+            if (result.next()) {
+                int count = result.getInt("count");
+                return count > 0;  // Retorna verdadero si count es mayor que cero, falso en caso contrario.
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Cerrar recursos
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
     //Valida que las dos contraseñas sean iguale
     public static boolean validacionContrasena(String contrasena1, String contrasena2) {
         if (contrasena1.equals(contrasena2)) {
@@ -128,6 +168,17 @@ public class Validaciones {
             JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
             return false;
         }
+    }
+
+    public static void aplicarLimitadorDeLongitud(JTextField campo, int maximoCaracteres) {
+        campo.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (campo.getText().length() >= maximoCaracteres) {
+                    e.consume();
+                }
+            }
+        });
     }
 
 }

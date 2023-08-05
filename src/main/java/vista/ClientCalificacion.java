@@ -17,7 +17,7 @@ public class ClientCalificacion extends javax.swing.JFrame {
         BtnConfirmar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
+        txtCalificacion = new javax.swing.JTextField();
         tituloBotonera8 = new javax.swing.JLabel();
         tituloBotonera10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -94,9 +94,9 @@ public class ClientCalificacion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(98, 151, 170));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtCalificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtCalificacionActionPerformed(evt);
             }
         });
 
@@ -110,12 +110,13 @@ public class ClientCalificacion extends javax.swing.JFrame {
         tituloBotonera10.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         tituloBotonera10.setForeground(new java.awt.Color(0, 0, 0));
         tituloBotonera10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloBotonera10.setText("Código de envio:");
+        tituloBotonera10.setText("Calificación:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,9 +126,8 @@ public class ClientCalificacion extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(tituloBotonera10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(255, 255, 255))))
-            .addComponent(jSeparator1)
+                        .addComponent(txtCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(273, 273, 273))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +136,9 @@ public class ClientCalificacion extends javax.swing.JFrame {
                 .addComponent(tituloBotonera8)
                 .addGap(7, 7, 7)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera10))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -168,9 +168,9 @@ public class ClientCalificacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCalificacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtCalificacionActionPerformed
 
     private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
         // TODO add your handling code here:
@@ -184,8 +184,8 @@ public class ClientCalificacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel tituloBotonera10;
     private javax.swing.JLabel tituloBotonera8;
+    public javax.swing.JTextField txtCalificacion;
     // End of variables declaration//GEN-END:variables
 }

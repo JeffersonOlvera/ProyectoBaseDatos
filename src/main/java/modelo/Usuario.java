@@ -1,7 +1,7 @@
-
 package modelo;
 
 public abstract class Usuario {
+
     private String nombre = "";
     private String apellido = "";
     private String correo = "";
@@ -62,6 +62,6 @@ public abstract class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    
+
+
 }

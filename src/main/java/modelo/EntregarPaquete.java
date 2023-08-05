@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-public class Envios {
+public class EntregarPaquete {
 
     public static boolean entregarPaquete(Remitente remitente, Destinatario destinatario, int id_camion) {
         Connection connection = ConexionBD.conectar();
@@ -18,22 +18,26 @@ public class Envios {
         PreparedStatement statementRemitente = null;
         PreparedStatement statementDestinatario = null;
         PreparedStatement statementEnvio = null;
-        PreparedStatement statementEstado = null;
+        PreparedStatement statementMetodoPago = null;
 
         String sqlRemitente = "INSERT INTO Remitente (Id_Remitente, Cedula, Nombre, Apellido, Correo, Direccion_P, Direccion_S, Descripcion) VALUES (Inc_Remitente.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
-        String sqlDestinatario = "INSERT INTO Destinatario (Id_Destinatario, Nombre, Apellido, Correo, Direccion_P, Direccion_S) VALUES (Inc_Destinatario.NEXTVAL, ?, ?, ?, ?, ?)";
-//        String sqlEnvio = "INSERT INTO Envio (Id_Envio, Codigo, Fecha_Hora_Envio, Fecha_Hora_Entrega, Id_Camion, Id_Estado, Id_Remitente, Id_Destinatario) VALUES (Inc_Envio.NEXTVAL, ?, ?, ?, Inc_Conductor.CURRVAL, ?, Inc_Remitente.CURRVAL, Inc_Destinatario.CURRVAL)";
-        String sqlEnvio = "INSERT INTO Envio (Id_Envio, Codigo, Fecha_Hora_Envio, Fecha_Hora_Entrega, Id_Camion, Id_Estado, Id_Remitente, Id_Destinatario) VALUES (Inc_Envio.NEXTVAL, ?, ?, ?, ?,Inc_Estado.CURRVAL, Inc_Remitente.CURRVAL, Inc_Destinatario.CURRVAL)";
-        String sqlEstado = "INSERT INTO Estado (Id_Estado, Estado) VALUES (Inc_Estado.NEXTVAL, ?)";
+        String sqlDestinatario = "INSERT INTO Destinatario (Id_Destinatario, Nombre, Apellido, Correo, Direccion_P, Direccion_S, Descripcion) VALUES (Inc_Destinatario.NEXTVAL, ?, ?, ?, ?, ?, ?)";
+        String sqlMetodoPago = "INSERT INTO Metodo_Pago (Id_Metodo_Pago, Monto_Total) VALUES (Inc_Metodo_Pago.NEXTVAL, ?)";
+        String sqlEnvio = "INSERT INTO Envio (Id_Envio, Codigo, Fecha_Hora_Envio, Fecha_Hora_Entrega, Id_Camion, Id_Estado, Id_Remitente, Id_Destinatario, Id_Metodo_Pago) VALUES (Inc_Envio.NEXTVAL, ?, ?, ?, ?, ?, Inc_Remitente.CURRVAL, Inc_Destinatario.CURRVAL, Inc_Metodo_Pago.CURRVAL)";
 
         try {
-            //Se genera el codenvio
+            // Se genera el codenvio
             int codEnvio = generarCodEnvio();
             Date fecha = new Date(System.currentTimeMillis());
 
+            // Insertar en la tabla "Metodo_Pago"
+            statementMetodoPago = connection.prepareStatement(sqlMetodoPago);
+            statementMetodoPago.setDouble(1, 0); // De momento se establece 0
+            statementMetodoPago.executeUpdate();
+
             // Insertar en la tabla "Remitente"
             statementRemitente = connection.prepareStatement(sqlRemitente);
-            statementRemitente.setString(1, remitente.getCedula()); // Establecer el valor de la cédula
+            statementRemitente.setString(1, remitente.getCedula());
             statementRemitente.setString(2, remitente.getNombre());
             statementRemitente.setString(3, remitente.getApellido());
             statementRemitente.setString(4, remitente.getCorreo());
@@ -49,12 +53,8 @@ public class Envios {
             statementDestinatario.setString(3, destinatario.getCorreo());
             statementDestinatario.setString(4, destinatario.getDireccionP());
             statementDestinatario.setString(5, destinatario.getDireccionS());
+            statementDestinatario.setString(6, remitente.getDescripcion());
             statementDestinatario.executeUpdate();
-
-            // Insertar en la tabla "Estado"
-            statementEstado = connection.prepareStatement(sqlEstado);
-            statementEstado.setString(1, "Pendiente");
-            statementEstado.executeUpdate();
 
             // Insertar en la tabla "Envio"
             statementEnvio = connection.prepareStatement(sqlEnvio);
@@ -62,6 +62,7 @@ public class Envios {
             statementEnvio.setDate(2, fecha);
             statementEnvio.setDate(3, null);
             statementEnvio.setInt(4, id_camion);
+            statementEnvio.setInt(5, 2); // ID del estado "Pendiente"
             statementEnvio.executeUpdate();
 
             connection.close();
@@ -70,10 +71,8 @@ public class Envios {
             return true;
 
         } catch (java.sql.SQLIntegrityConstraintViolationException e) {
-            //"Error al registrar el conductor."
-            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Error al registrar el conductor.");
             e.printStackTrace();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+import main.ClasePrincipal;
+import modelo.AutenticacionResultado;
 import vista.ViewLogin;
 import modelo.GestionUsuarios;
-import modelo.Paquete;
+import modelo.SeguimientoPaquete;
+import modelo.Usuario;
 import modelo.VentanaUtils;
 import vista.ViewRegistroCliente;
 import vista.ViewRegistroConductor;
@@ -20,7 +23,7 @@ public class ControladorLogin implements ActionListener {
     private GestionUsuarios gestionUsuarios = new GestionUsuarios();
     private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
     private final PanelCliente panelCliente = new PanelCliente();
-    private final Paquete paquete = new Paquete();
+    private final SeguimientoPaquete paquete = new SeguimientoPaquete();
     private final PanelConductor panelConductor = new PanelConductor();
     private final ViewRegistroConductor registroConductor = new ViewRegistroConductor();
     private final ViewRegistroCliente registroCliente = new ViewRegistroCliente();
@@ -39,14 +42,23 @@ public class ControladorLogin implements ActionListener {
     }
 
     public String login() {
-        String correo = login.txtCorreo.getText();
-        String contrasenia = login.txtContrasena.getText();
+    String correo = login.txtCorreo.getText();
+    String contrasenia = login.txtContrasena.getText();
 
-        String tipoUsuario = GestionUsuarios.autentificacionUsuario(correo, contrasenia);
+    AutenticacionResultado resultado = GestionUsuarios.autenticacionUsuario(correo, contrasenia);
+
+    if (resultado != null) {
+        int idUsuario = resultado.getIdUsuario();
+        String tipoUsuario = resultado.getTipoUsuario();
+
+        // Establecer el ID del usuario autenticado
+        ClasePrincipal.setIdUsuarioAutenticado(idUsuario);
 
         return tipoUsuario;
-
+    } else {
+        return null;
     }
+}
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -72,7 +84,7 @@ public class ControladorLogin implements ActionListener {
             else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
             }
- 
+
         }// Boton de registro
         if (e.getSource() == login.btnRegistro) {
             VentanaUtils.cerrarVentana(login);

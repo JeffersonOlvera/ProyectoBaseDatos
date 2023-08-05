@@ -88,17 +88,16 @@ public class GestionUsuarios {
         return false;
     }
 
-    // Antentificación / LOGIN 
-    public static String autentificacionUsuario(String correo, String contrasena) {
+    public static AutenticacionResultado autenticacionUsuario(String correo, String contrasena) {
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
         ResultSet result = null;
 
-        String sqlCliente = "SELECT 'cliente' AS tipo FROM usuario u "
+        String sqlCliente = "SELECT u.Id_Usuario, 'cliente' AS tipo FROM usuario u "
                 + "JOIN cliente c ON u.Id_Usuario = c.Id_Usuario "
                 + "WHERE u.correo = ? AND u.contrasenia = ?";
 
-        String sqlConductor = "SELECT 'conductor' AS tipo FROM usuario u "
+        String sqlConductor = "SELECT u.Id_Usuario, 'conductor' AS tipo FROM usuario u "
                 + "JOIN conductor c ON u.Id_Usuario = c.Id_Usuario "
                 + "WHERE u.correo = ? AND u.contrasenia = ?";
 
@@ -110,9 +109,10 @@ public class GestionUsuarios {
             result = statement.executeQuery();
 
             if (result.next()) {
+                int idCliente = result.getInt("Id_Usuario");
                 String tipoUsuario = result.getString("tipo");
                 connection.close();
-                return tipoUsuario;
+                return new AutenticacionResultado(idCliente, tipoUsuario);
             }
 
             // Comprobar si es un conductor
@@ -122,9 +122,10 @@ public class GestionUsuarios {
             result = statement.executeQuery();
 
             if (result.next()) {
+                int idConductor = result.getInt("Id_Usuario");
                 String tipoUsuario = result.getString("tipo");
                 connection.close();
-                return tipoUsuario;
+                return new AutenticacionResultado(idConductor, tipoUsuario);
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al autenticar el usuario");
@@ -132,6 +133,4 @@ public class GestionUsuarios {
         }
         return null;
     }
-
-
 }

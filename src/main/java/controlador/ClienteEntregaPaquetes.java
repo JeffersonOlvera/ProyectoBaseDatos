@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.Destinatario;
-import modelo.Envios;
+import modelo.EntregarPaquete;
 import modelo.Remitente;
 import modelo.VentanaUtils;
 import vista.ClientEntregaPaquete;
@@ -66,28 +66,32 @@ public class ClienteEntregaPaquetes implements ActionListener {
         destinatario.setDireccionP(viewEntregaPaquete2.txtDireccionP.getText());
         destinatario.setDireccionS(viewEntregaPaquete2.txtDireccionS.getText());
         destinatario.setCorreo(viewEntregaPaquete2.txtCorreo.getText());
-
+        destinatario.setDescripcion(viewEntregaPaquete2.txtDescripcion.getText());
         return destinatario;
     }
 
+    //Realizar envio
     public void realizarEnvio() {
         Remitente remitente = obtenerDatosRemitente();
         Destinatario destinatario = obtenerDatosDestinatario();
-        int idCamionAleatorio = Envios.obtenerIdCamionAleatorio();
-        Envios.entregarPaquete(remitente, destinatario, idCamionAleatorio);
-        
+        int idCamionAleatorio = EntregarPaquete.obtenerIdCamionAleatorio();
+        EntregarPaquete.entregarPaquete(remitente, destinatario, idCamionAleatorio);
+
     }
 
+    //Verificar remitente no este vacio
     public boolean remitenteNoVacio(Remitente remitente) {
-        return !"".equals(remitente.getNombre()) && !"".equals(remitente.getApellido()) && !"".equals(remitente.getTelefono())
-                && !"".equals(remitente.getCedula()) && !"".equals(remitente.getDireccionP()) && !"".equals(remitente.getDireccionS())
+        return !"".equals(remitente.getNombre()) && !"".equals(remitente.getApellido())
+                && !"".equals(remitente.getTelefono()) && !"".equals(remitente.getCedula())
+                && !"".equals(remitente.getDireccionP()) && !"".equals(remitente.getDireccionS())
                 && !"".equals(remitente.getCorreo()) && !"".equals(remitente.getDescripcion());
     }
 
+    //Verificar destinatario no este vacio
     public boolean destinatarioNoVacio(Destinatario destinatario) {
-        return !"".equals(destinatario.getNombre()) && !"".equals(destinatario.getApellido()) && !"".equals(destinatario.getTelefono())
-                && !"".equals(destinatario.getDireccionP()) && !"".equals(destinatario.getDireccionS())
-                && !"".equals(destinatario.getCorreo());
+        return !"".equals(destinatario.getNombre()) && !"".equals(destinatario.getApellido())
+                && !"".equals(destinatario.getTelefono()) && !"".equals(destinatario.getDireccionP())
+                && !"".equals(destinatario.getDireccionS()) && !"".equals(destinatario.getCorreo());
     }
 
     @Override
@@ -104,29 +108,24 @@ public class ClienteEntregaPaquetes implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
             }
-
         } else if (e.getSource() == viewEntregaPaquete2.BtnCancelar) {
             VentanaUtils.cerrarVentana(viewEntregaPaquete2);
             VentanaUtils.mostrarVentana(viewEntregaPaquete, "Entrega Paquete");
-
         } else if (e.getSource() == viewEntregaPaquete2.BtnSiguiente) {
             Destinatario destinatario = obtenerDatosDestinatario();
             if (destinatarioNoVacio(destinatario)) {
                 VentanaUtils.cerrarVentana(viewEntregaPaquete2);
                 VentanaUtils.mostrarVentana(viewMetodoPago, "Metodo Pago");
-            }  else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
             }
-
         } else if (e.getSource() == viewMetodoPago.BtnSiguiente) {
             VentanaUtils.cerrarVentana(viewMetodoPago);
             VentanaUtils.mostrarVentana(viewMetodoPago2, "Metodo Pago");
         } else if (e.getSource() == viewMetodoPago2.BtnConfirmar) {
             realizarEnvio();
-
             VentanaUtils.cerrarVentana(viewMetodoPago2);
             menu();
         }
-
     }
 }

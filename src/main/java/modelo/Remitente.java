@@ -10,7 +10,9 @@ public class Remitente {
     String direccionP = "";
     String direccionS = "";
     String descripcion = "";
-
+    MetodoPago metodoPago;
+    
+    
     public String getTelefono() {
         return telefono;
     }
@@ -74,5 +76,6 @@ public class Remitente {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
 
 }
