@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import main.ClasePrincipal;
 import modelo.AutenticacionResultado;
 import vista.ViewLogin;
-import modelo.GestionUsuarios;
+import modelo.UsuarioDAO;
 import modelo.SeguimientoPaquete;
 import modelo.Usuario;
 import modelo.VentanaUtils;
@@ -20,7 +20,7 @@ import vista.PanelConductor;
 public class ControladorLogin implements ActionListener {
 
     private ViewLogin login = new ViewLogin();
-    private GestionUsuarios gestionUsuarios = new GestionUsuarios();
+    private UsuarioDAO gestionUsuarios = new UsuarioDAO();
     private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
     private final PanelCliente panelCliente = new PanelCliente();
     private final SeguimientoPaquete paquete = new SeguimientoPaquete();
@@ -28,7 +28,7 @@ public class ControladorLogin implements ActionListener {
     private final ViewRegistroConductor registroConductor = new ViewRegistroConductor();
     private final ViewRegistroCliente registroCliente = new ViewRegistroCliente();
 
-    public ControladorLogin(ViewLogin login, GestionUsuarios gestionUsuarios, ViewSeleccionUsuario seleccionUsuario) {
+    public ControladorLogin(ViewLogin login, UsuarioDAO gestionUsuarios, ViewSeleccionUsuario seleccionUsuario) {
         this.login = login;
         this.gestionUsuarios = gestionUsuarios;
         this.seleccionUsuario = seleccionUsuario;
@@ -45,7 +45,7 @@ public class ControladorLogin implements ActionListener {
     String correo = login.txtCorreo.getText();
     String contrasenia = login.txtContrasena.getText();
 
-    AutenticacionResultado resultado = GestionUsuarios.autenticacionUsuario(correo, contrasenia);
+    AutenticacionResultado resultado = UsuarioDAO.autenticacionUsuario(correo, contrasenia);
 
     if (resultado != null) {
         int idUsuario = resultado.getIdUsuario();

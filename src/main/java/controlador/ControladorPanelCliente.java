@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import main.ClasePrincipal;
 import modelo.VentanaUtils;
 import vista.ClientCalificacion;
 import vista.ClientDevolucion;
@@ -24,7 +25,8 @@ public class ControladorPanelCliente implements ActionListener {
         this.panelCliente.BtnEntregaPaquete.addActionListener(this);
         this.panelCliente.BtnHistorialEnvios.addActionListener(this);
         this.panelCliente.BtnSeguimientoPaquete.addActionListener(this);
-    }
+        
+     }
 
     public void run() {
         VentanaUtils.mostrarVentana(panelCliente, "Panel Cliente");

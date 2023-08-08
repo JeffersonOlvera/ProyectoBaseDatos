@@ -17,11 +17,11 @@ public class ClientMetPago2 extends javax.swing.JFrame {
         Panel = new javax.swing.JPanel();
         tituloBotonera11 = new javax.swing.JLabel();
         tituloBotonera13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        txtNumTarjeta = new javax.swing.JTextField();
+        txtNombreTarjeta = new javax.swing.JTextField();
         tituloBotonera14 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        txtFechaTarjeta = new javax.swing.JTextField();
+        txtCodTarjeta = new javax.swing.JTextField();
         tituloBotonera12 = new javax.swing.JLabel();
         BtnConfirmar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -86,7 +86,7 @@ public class ClientMetPago2 extends javax.swing.JFrame {
         tituloBotonera14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloBotonera14.setText("Fecha:");
 
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        txtCodTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
             }
@@ -132,10 +132,10 @@ public class ClientMetPago2 extends javax.swing.JFrame {
                                 .addComponent(tituloBotonera14, javax.swing.GroupLayout.Alignment.TRAILING)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFechaTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(80, 80, 80))
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGap(320, 320, 320)
@@ -147,19 +147,19 @@ public class ClientMetPago2 extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addContainerGap(88, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloBotonera13)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFechaTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera12))
                 .addGap(81, 81, 81)
                 .addComponent(BtnConfirmar)
@@ -236,15 +236,15 @@ public class ClientMetPago2 extends javax.swing.JFrame {
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JLabel tituloBotonera1;
     private javax.swing.JLabel tituloBotonera11;
     private javax.swing.JLabel tituloBotonera12;
     private javax.swing.JLabel tituloBotonera13;
     private javax.swing.JLabel tituloBotonera14;
     private javax.swing.JLabel tituloEncabezado;
+    public javax.swing.JTextField txtCodTarjeta;
+    public javax.swing.JTextField txtFechaTarjeta;
+    public javax.swing.JTextField txtNombreTarjeta;
+    public javax.swing.JTextField txtNumTarjeta;
     // End of variables declaration//GEN-END:variables
 }

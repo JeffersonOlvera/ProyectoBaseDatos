@@ -76,14 +76,34 @@ public class Tabla {
     }
 
     public void tablaNormal(JTable tabla) {
-        tabla.setDefaultRenderer(Object.class, new Render3());
+        tabla.setDefaultRenderer(Object.class, new Render2());
 
         DefaultTableModel d = new DefaultTableModel(
                 new Object[][]{
-                    {"b1", "b1", "95236", "d1", "Entregado", "av. 123", "av.356", 8756},
-                    {"b2", "b2", "95237", "d2", "Cancelado", "av. 321", "av.954", 957}
+                    {"b1", "b1", "95236", "Entregado", "av. 123", "av.356", 8756},
+                    {"b2", "b2", "95237", "Cancelado", "av. 321", "av.954", 957}
                 },
-                new String[]{"Nombres", "Apellidos", "DNI", "Teléfono", "Estado", "D.Recogida", "D.Entrega", "Código"}
+                new String[]{"Nombres", "Apellidos", "DNI", "Estado", "D.Recogida", "D.Entrega", "Código"}
+        ) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+
+        };
+        tabla.setModel(d);
+        tabla.setRowSelectionAllowed(false);
+        tabla.setRowHeight(25);
+    }
+
+    public void tablaEntregasAsignadas(JTable tabla) {
+        tabla.setDefaultRenderer(Object.class, new Render2());
+
+        DefaultTableModel d = new DefaultTableModel(
+                new Object[][]{
+                    {"b1", "b1", "95236", "Entregado", "av. 123", "av.356", 8756},
+                    {"b2", "b2", "95237", "Cancelado", "av. 321", "av.954", 957}
+                },
+                new String[]{"Nombres", "Apellidos", "DNI", "Estado", "D.Recogida", "D.Entrega", "Código"}
         ) {
             public boolean isCellEditable(int row, int column) {
                 return false;

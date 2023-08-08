@@ -19,7 +19,7 @@ public class PanelCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Encabezado = new javax.swing.JPanel();
-        iconoEncabezado = new javax.swing.JLabel();
+        textoEncabezado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel - Cliente");
@@ -117,14 +117,14 @@ public class PanelCliente extends javax.swing.JFrame {
 
         Encabezado.setBackground(new java.awt.Color(47, 221, 217));
 
-        iconoEncabezado.setBackground(new java.awt.Color(29, 29, 29));
-        iconoEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        iconoEncabezado.setForeground(new java.awt.Color(29, 29, 29));
-        iconoEncabezado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen2 (100x100).png"))); // NOI18N
-        iconoEncabezado.setText("Bienvenido a Express");
-        iconoEncabezado.setAlignmentX(0.5F);
-        iconoEncabezado.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        iconoEncabezado.setIconTextGap(200);
+        textoEncabezado.setBackground(new java.awt.Color(29, 29, 29));
+        textoEncabezado.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        textoEncabezado.setForeground(new java.awt.Color(29, 29, 29));
+        textoEncabezado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen2 (100x100).png"))); // NOI18N
+        textoEncabezado.setText("Bienvenido a Express");
+        textoEncabezado.setAlignmentX(0.5F);
+        textoEncabezado.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        textoEncabezado.setIconTextGap(200);
 
         javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
         Encabezado.setLayout(EncabezadoLayout);
@@ -132,14 +132,14 @@ public class PanelCliente extends javax.swing.JFrame {
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(iconoEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+                .addComponent(textoEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
                 .addContainerGap())
         );
         EncabezadoLayout.setVerticalGroup(
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(iconoEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -180,9 +180,9 @@ public class PanelCliente extends javax.swing.JFrame {
     public javax.swing.JButton BtnHistorialEnvios;
     public javax.swing.JButton BtnSeguimientoPaquete;
     private javax.swing.JPanel Encabezado;
-    private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel textoEncabezado;
     private javax.swing.JLabel tituloBotonera;
     // End of variables declaration//GEN-END:variables
 }

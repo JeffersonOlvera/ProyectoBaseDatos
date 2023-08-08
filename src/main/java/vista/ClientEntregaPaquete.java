@@ -27,10 +27,8 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         tituloBotonera5 = new javax.swing.JLabel();
         tituloBotonera6 = new javax.swing.JLabel();
         tituloBotonera7 = new javax.swing.JLabel();
-        txtCodigoPedido = new javax.swing.JTextField();
-        txtDireccionS = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        tituloBotonera8 = new javax.swing.JLabel();
+        txtDireccionS = new javax.swing.JTextField();
         tituloBotonera9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcion = new javax.swing.JTextArea();
@@ -40,6 +38,9 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         tituloBotonera10 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
         tituloBotonera11 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        tituloBotonera8 = new javax.swing.JLabel();
+        txtMonto = new javax.swing.JTextField();
         EncabezadoPanel = new javax.swing.JPanel();
         tituloBotonera1 = new javax.swing.JLabel();
 
@@ -132,8 +133,8 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(iconoEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(iconoEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         EncabezadoLayout.setVerticalGroup(
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +163,7 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         tituloBotonera4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         tituloBotonera4.setForeground(new java.awt.Color(0, 0, 0));
         tituloBotonera4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloBotonera4.setText("Código pedido:");
+        tituloBotonera4.setText("Email:");
 
         tituloBotonera5.setBackground(new java.awt.Color(0, 0, 0));
         tituloBotonera5.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -181,12 +182,6 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         tituloBotonera7.setForeground(new java.awt.Color(0, 0, 0));
         tituloBotonera7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloBotonera7.setText("Dirección principal:");
-
-        tituloBotonera8.setBackground(new java.awt.Color(0, 0, 0));
-        tituloBotonera8.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        tituloBotonera8.setForeground(new java.awt.Color(0, 0, 0));
-        tituloBotonera8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloBotonera8.setText("Email:");
 
         tituloBotonera9.setBackground(new java.awt.Color(0, 0, 0));
         tituloBotonera9.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -241,61 +236,78 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         tituloBotonera11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloBotonera11.setText("CI:");
 
+        tituloBotonera8.setBackground(new java.awt.Color(0, 0, 0));
+        tituloBotonera8.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        tituloBotonera8.setForeground(new java.awt.Color(0, 0, 0));
+        tituloBotonera8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloBotonera8.setText("Valor a pagar:");
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                                        .addComponent(tituloBotonera7)
-                                        .addGap(4, 4, 4))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                                        .addComponent(tituloBotonera4)
-                                        .addGap(6, 6, 6))))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelLayout.createSequentialGroup()
+                            .addGap(38, 38, 38)
+                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(PanelLayout.createSequentialGroup()
+                                    .addGap(17, 17, 17)
                                     .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelLayout.createSequentialGroup()
-                                            .addGap(95, 95, 95)
-                                            .addComponent(tituloBotonera8))
-                                        .addComponent(tituloBotonera5, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addComponent(tituloBotonera9, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(5, 5, 5))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tituloBotonera10)
-                                .addComponent(tituloBotonera3))
-                            .addComponent(tituloBotonera6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                                            .addComponent(tituloBotonera7)
+                                            .addGap(4, 4, 4))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                                            .addComponent(tituloBotonera4)
+                                            .addGap(6, 6, 6))))
+                                .addGroup(PanelLayout.createSequentialGroup()
+                                    .addComponent(tituloBotonera5)
+                                    .addGap(5, 5, 5))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tituloBotonera10)
+                                    .addComponent(tituloBotonera3))
+                                .addComponent(tituloBotonera6, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(tituloBotonera9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(PanelLayout.createSequentialGroup()
-                            .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtDireccionS, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtDireccionP, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tituloBotonera11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addComponent(txtDireccionS)
+                    .addComponent(txtDireccionP)
+                    .addComponent(txtApellido)
+                    .addComponent(txtNombre)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(PanelLayout.createSequentialGroup()
+                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tituloBotonera11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(267, 267, 267))
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(tituloBotonera8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,43 +316,43 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tituloBotonera11))
-                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tituloBotonera6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tituloBotonera6)
+                    .addComponent(tituloBotonera11)
+                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDireccionP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDireccionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloBotonera5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloBotonera4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloBotonera8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(tituloBotonera4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tituloBotonera9)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tituloBotonera8))
                 .addGap(18, 18, 18)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         EncabezadoPanel.setBackground(new java.awt.Color(0, 102, 255));
@@ -358,7 +370,7 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
             .addGroup(EncabezadoPanelLayout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(tituloBotonera1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         EncabezadoPanelLayout.setVerticalGroup(
             EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,16 +384,16 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(Botonera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(EncabezadoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Encabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -430,6 +442,7 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
     private javax.swing.JButton historialEnvios;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton seguimientoPaqueteBtn;
     private javax.swing.JLabel tituloBotonera;
     private javax.swing.JLabel tituloBotonera1;
@@ -444,11 +457,11 @@ public class ClientEntregaPaquete extends javax.swing.JFrame {
     private javax.swing.JLabel tituloBotonera9;
     public javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtCedula;
-    public javax.swing.JTextField txtCodigoPedido;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextArea txtDescripcion;
     public javax.swing.JTextField txtDireccionP;
     public javax.swing.JTextField txtDireccionS;
+    public javax.swing.JTextField txtMonto;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables

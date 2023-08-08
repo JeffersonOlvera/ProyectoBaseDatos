@@ -10,6 +10,23 @@ public class Remitente {
     String direccionP = "";
     String direccionS = "";
     String descripcion = "";
+    Double monto;
+
+    public Double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(Double monto) {
+        this.monto = monto;
+    }
+
+    public MetodoPago getMetodoPago() {
+        return metodoPago;
+    }
+
+    public void setMetodoPago(MetodoPago metodoPago) {
+        this.metodoPago = metodoPago;
+    }
     MetodoPago metodoPago;
     
     
@@ -76,6 +93,7 @@ public class Remitente {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
 
 
 }

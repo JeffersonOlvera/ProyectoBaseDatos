@@ -7,9 +7,10 @@ import modelo.*;
 public class ClasePrincipal {
 
     private static int idUsuarioAutenticado = -1;
-
+    private static String nombreUsuario = "";
+    
     public static void main(String args[]) {
-        GestionUsuarios modelo = new GestionUsuarios();
+        UsuarioDAO modelo = new UsuarioDAO();
         ViewPrincipal ventanaPrincipal = new ViewPrincipal();
         Inicio controlador = new Inicio(modelo, ventanaPrincipal);
         controlador.run();
@@ -25,4 +26,14 @@ public class ClasePrincipal {
     public static void setIdUsuarioAutenticado(int idUsuario) {
         idUsuarioAutenticado = idUsuario;
     }
+
+    public static String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public static void setNombreUsuario(String nombreUsuario) {
+        ClasePrincipal.nombreUsuario = nombreUsuario;
+    }
+    
+
 }

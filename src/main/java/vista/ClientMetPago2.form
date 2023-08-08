@@ -139,10 +139,10 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextField12" min="-2" pref="261" max="-2" attributes="0"/>
-                      <Component id="jTextField13" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
-                      <Component id="jTextField10" min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="jTextField11" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="txtNombreTarjeta" min="-2" pref="261" max="-2" attributes="0"/>
+                      <Component id="txtNumTarjeta" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                      <Component id="txtFechaTarjeta" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="txtCodTarjeta" min="-2" pref="45" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
               </Group>
@@ -158,22 +158,22 @@
               <Group type="102" attributes="0">
                   <EmptySpace pref="88" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombreTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tituloBotonera11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="tituloBotonera13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNumTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFechaTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tituloBotonera14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tituloBotonera12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
@@ -219,9 +219,15 @@
             <Property name="text" type="java.lang.String" value="N&#xfa;mero de tarjeta:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField13">
+        <Component class="javax.swing.JTextField" name="txtNumTarjeta">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
+        <Component class="javax.swing.JTextField" name="txtNombreTarjeta">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="tituloBotonera14">
           <Properties>
@@ -238,12 +244,18 @@
             <Property name="text" type="java.lang.String" value="Fecha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
+        <Component class="javax.swing.JTextField" name="txtFechaTarjeta">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="javax.swing.JTextField" name="txtCodTarjeta">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="tituloBotonera12">
           <Properties>

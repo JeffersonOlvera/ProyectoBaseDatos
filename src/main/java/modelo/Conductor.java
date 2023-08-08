@@ -8,6 +8,16 @@ public class Conductor extends Usuario {
     private String modeloCamion = "";
     private String numPlaca = "";
     private ArrayList historialEnvios = new ArrayList();
+    private double calificacion;
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
+
 
     public int getID() {
         return ID;

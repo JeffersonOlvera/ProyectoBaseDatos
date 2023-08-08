@@ -12,22 +12,27 @@ public class Render extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
             boolean hasFocus, int row, int column) {
 
-        int disponibilidadColumnIndex = 7; // Índice de la columna "Disponibilidad"
+        int estadoColumnIndex = 5; // Índice de la columna "Disponibilidad"
 
         // Cambiar el fondo de la celda según el índice de la columna
-        if (column == disponibilidadColumnIndex) {
+        if (column == estadoColumnIndex) {
             // Obtener el valor de la celda
-            String disponibilidadValue = table.getModel().getValueAt(row, column).toString();
+            String estadoValue = table.getModel().getValueAt(row, column).toString();
 
-            if (null == disponibilidadValue) {
+            if (null == estadoValue) {
                 setBackground(table.getBackground());
             } else {
-                switch (disponibilidadValue) {
-                    case "Activo":
-                        setBackground(Color.GREEN);
+                switch (estadoValue) {
+                    case "Completado":
+                        Color verde = new Color (79, 209, 59);
+                        setBackground(verde);
                         break;
-                    case "Inactivo":
-                        setBackground(Color.RED);
+                    case "Cancelado":
+                        Color rojoClaro = new Color(227, 47, 34);
+                        setBackground(rojoClaro);
+                        break;
+                    case "Pendiente":
+                        setBackground(Color.YELLOW);
                         break;
                     default:
                         // Si el valor no es "Activo" ni "Inactivo", establecer un color de fondo predeterminado

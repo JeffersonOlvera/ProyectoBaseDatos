@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 import modelo.Cliente;
 import modelo.Conductor;
-import modelo.GestionUsuarios;
+import modelo.UsuarioDAO;
 import modelo.Validaciones;
 import modelo.VentanaUtils;
 import vista.PanelCliente;
@@ -23,11 +23,11 @@ public class ControladorRegistro implements ActionListener {
     private ViewSeleccionUsuario seleccionUsuario = new ViewSeleccionUsuario();
     private ViewRegistroConductor registroConductor = new ViewRegistroConductor();
     private ViewRegistroCliente registroCliente = new ViewRegistroCliente();
-    private GestionUsuarios gestionUsuarios = new GestionUsuarios();
+    private UsuarioDAO gestionUsuarios = new UsuarioDAO();
     private final PanelCliente panelCliente = new PanelCliente();
     private final PanelConductor panelConductor = new PanelConductor();
 
-    public ControladorRegistro(ViewSeleccionUsuario seleccionUsuario, ViewRegistroConductor registroConductor, ViewRegistroCliente registroCliente, GestionUsuarios gestionUsuarios) {
+    public ControladorRegistro(ViewSeleccionUsuario seleccionUsuario, ViewRegistroConductor registroConductor, ViewRegistroCliente registroCliente, UsuarioDAO gestionUsuarios) {
         this.seleccionUsuario = seleccionUsuario;
         this.registroConductor = registroConductor;
         this.registroCliente = registroCliente;
@@ -63,7 +63,7 @@ public class ControladorRegistro implements ActionListener {
             if ((Validaciones.validacionContrasena(contrasenia, contrasenia2))) {
                 if (Validaciones.verificarCorreoRegistrado(cliente.getCorreo())) {
                     JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
-                } else if (GestionUsuarios.registroCliente(cliente)) {
+                } else if (UsuarioDAO.registroCliente(cliente)) {
                     JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente.");
                     return true;
                 } else {
@@ -95,7 +95,7 @@ public class ControladorRegistro implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese correo.");
                 } else if (Validaciones.verificarPlaca(conductor.getNumPlaca())) {
                     JOptionPane.showMessageDialog(null, "Ya existe una cuenta registrada con ese num de placa.");
-                } else if (GestionUsuarios.registroConductor(conductor)) {
+                } else if (UsuarioDAO.registroConductor(conductor)) {
                     JOptionPane.showMessageDialog(null, "Conductor registrado exitosamente.");
                     return true;
                 } else {

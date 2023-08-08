@@ -88,11 +88,11 @@ public class ClienteSeguimiento implements ActionListener {
 
     public void calificarConductor() {
         int calificacion = Integer.parseInt(viewCalificacion.txtCalificacion.getText());
-        int idClienteAutenticado = ClasePrincipal.getIdUsuarioAutenticado();
+        int idUsuario = ClasePrincipal.getIdUsuarioAutenticado();
 
         // Logica calificar conductor
         if (calificacion >= 1 && calificacion <= 5) {
-            SeguimientoPaquete.calificarConductor(codEnvio, calificacion, idClienteAutenticado);
+            SeguimientoPaquete.calificarConductor(codEnvio, calificacion, idUsuario);
             VentanaUtils.cerrarVentana(viewCalificacion);
             menu();
         } else {

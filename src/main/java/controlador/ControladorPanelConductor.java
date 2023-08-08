@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import modelo.VentanaUtils;
-import vista.DriverAsignarDriver;
+import vista.DriverHistorialEntregas;
 import vista.DriverCheckEntrega;
 import vista.DriverComision;
 import vista.DriverDevoluciones;
@@ -53,7 +53,7 @@ public class ControladorPanelConductor implements ActionListener {
         // Boton Historial entregas
         if (ae.getSource() == panelConductor.BtnHistorialEntregas) {
             VentanaUtils.cerrarVentana(panelConductor);
-            DriverAsignarDriver driverAsignarDriver = new DriverAsignarDriver();
+            DriverHistorialEntregas driverAsignarDriver = new DriverHistorialEntregas();
             DriverHistorialDriver driverHistorialDriver = new DriverHistorialDriver(driverAsignarDriver);
             driverHistorialDriver.run();
         }

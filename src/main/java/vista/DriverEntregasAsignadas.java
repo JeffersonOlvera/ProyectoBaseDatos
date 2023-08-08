@@ -2,14 +2,31 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableModel;
 
 public class DriverEntregasAsignadas extends javax.swing.JFrame {
 
     Tabla t = new Tabla();
+    DefaultTableCellRenderer render = new Render();
 
     public DriverEntregasAsignadas() {
         initComponents();
-        t.tablaSeleccionar1(tabla);
+    }
+
+    public void cambiarModeloTabla(TableModel nuevoModelo) {
+        tabla.setModel(nuevoModelo);
+
+        int estadoColumnIndex = 5;
+        int seleccionarColumIndex = 7;
+        tabla.getColumnModel().getColumn(estadoColumnIndex).setCellRenderer(new Render());
+        tabla.getColumnModel().getColumn(seleccionarColumIndex).setCellRenderer(new Render());
+        tabla.setRowSelectionAllowed(false);
+        tabla.setRowHeight(25);
+    }
+
+    public boolean isCellEditable(int row, int column) {
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -23,7 +40,7 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         BtnResultados = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtCodEnvio = new javax.swing.JTextField();
         EncabezadoPanel = new javax.swing.JPanel();
         tituloBotonera9 = new javax.swing.JLabel();
 
@@ -139,9 +156,9 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
 
         BtnResultados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resultados.png"))); // NOI18N
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCodEnvio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtCodEnvioActionPerformed(evt);
             }
         });
 
@@ -157,9 +174,9 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCodEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BtnResultados)))))
                 .addContainerGap())
@@ -170,7 +187,7 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BtnResultados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(txtCodEnvio))
                 .addGap(14, 14, 14)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -190,8 +207,8 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
         EncabezadoPanel.setLayout(EncabezadoPanelLayout);
         EncabezadoPanelLayout.setHorizontalGroup(
             EncabezadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EncabezadoPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+            .addGroup(EncabezadoPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(tituloBotonera9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -229,24 +246,12 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMenuActionPerformed
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
-      
-        //detecta que el boton sea precionado
-        int column = tabla.getColumnModel().getColumnIndexAtX(evt.getX());
-        int row = evt.getY() / tabla.getRowHeight();
-        
-        if (row < tabla.getRowCount() && row>= 0 && column < tabla.getColumnCount()&& column >=0){
-            Object value = tabla.getValueAt(row,column);
-            if (value instanceof JButton){
-                ((JButton)value).doClick();
-                JButton boton = (JButton)value;
-                JOptionPane.showMessageDialog(null, "Hola");
-            }
-        }   
+
     }//GEN-LAST:event_tablaMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCodEnvioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodEnvioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCodEnvioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnMenu;
@@ -256,8 +261,8 @@ public class DriverEntregasAsignadas extends javax.swing.JFrame {
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel iconoEncabezado;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tabla;
+    public javax.swing.JTable tabla;
     private javax.swing.JLabel tituloBotonera9;
+    public javax.swing.JTextField txtCodEnvio;
     // End of variables declaration//GEN-END:variables
 }
