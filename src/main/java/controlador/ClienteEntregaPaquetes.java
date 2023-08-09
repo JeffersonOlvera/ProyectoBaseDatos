@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import javax.swing.JOptionPane;
+import main.ClasePrincipal;
 import modelo.Destinatario;
 import modelo.EntregarPaquete;
 import modelo.PagoTarjetaCredito;
@@ -41,7 +42,8 @@ public class ClienteEntregaPaquetes implements ActionListener {
         Validaciones.aplicarLimitadorDeLongitud(viewEntregaPaquete2.txtTelefono, 10);
         Validaciones.aplicarLimitadorDeLongitud(viewMetodoPago2.txtCodTarjeta, 3);
         Validaciones.aplicarLimitadorDeLongitud(viewMetodoPago2.txtFechaTarjeta, 5);
-               Validaciones.aplicarLimitadorDeLongitud(viewMetodoPago2.txtNombreTarjeta, 18);
+        Validaciones.aplicarLimitadorDeLongitud(viewMetodoPago2.txtNumTarjeta, 18);
+        
 
     }
 
@@ -94,9 +96,10 @@ public class ClienteEntregaPaquetes implements ActionListener {
             Destinatario destinatario = obtenerDatosDestinatario();
             PagoTarjetaCredito datosTarjeta = obtenerDatosTarjeta();
             datosTarjeta.setEsTarjet(true);
-
             int idCamionAleatorio = EntregarPaquete.obtenerIdCamionAleatorio();
-            EntregarPaquete.entregarPaquete(remitente, destinatario, idCamionAleatorio, datosTarjeta);
+            int idCliente = ClasePrincipal.getIdUsuarioAutenticado();
+            
+            EntregarPaquete.entregarPaquete(remitente, destinatario, idCamionAleatorio, datosTarjeta, idCliente);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Debe poner el . en vez de la ,");
         }
@@ -109,9 +112,10 @@ public class ClienteEntregaPaquetes implements ActionListener {
             Destinatario destinatario = obtenerDatosDestinatario();
             PagoTarjetaCredito datosTarjeta = obtenerDatosTarjeta();
             datosTarjeta.setEsTarjet(false);
+            int idCliente = ClasePrincipal.getIdUsuarioAutenticado();
 
             int idCamionAleatorio = EntregarPaquete.obtenerIdCamionAleatorio();
-            EntregarPaquete.entregarPaquete(remitente, destinatario, idCamionAleatorio, datosTarjeta);
+            EntregarPaquete.entregarPaquete(remitente, destinatario, idCamionAleatorio, datosTarjeta, idCliente);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Debe poner el . en vez de la ,");
         }

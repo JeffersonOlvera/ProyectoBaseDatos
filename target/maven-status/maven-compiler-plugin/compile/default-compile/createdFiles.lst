@@ -41,6 +41,7 @@ modelo\VentanaUtils.class
 vista\ClientEntregaPaquete$3.class
 vista\DriverComision.class
 vista\ClientCalificacion$1.class
+controlador\ClienteHistorialEnvio$2.class
 modelo\AutenticacionResultado.class
 vista\ViewLogin$1.class
 modelo\DatosEnvio.class
@@ -61,6 +62,8 @@ vista\DriverEntregasAsignadas$4.class
 vista\DriverPerfil.class
 controlador\Inicio.class
 controlador\ClienteSeguimiento.class
+controlador\ClienteHistorialEnvio$1.class
+controlador\ControladorPanelConductor$1.class
 vista\ClientCalificacion$2.class
 vista\ClientEntregaPaquete2$2.class
 vista\Tabla.class
@@ -91,9 +94,9 @@ vista\Tabla$5.class
 modelo\Destinatario.class
 vista\ClientFactura$2.class
 vista\ViewRegistroCliente.class
+controlador\ControladorPanelCliente$1.class
 vista\DriverDevoluciones$5.class
 modelo\EnvioTablas$2.class
-modelo\PagoEfectivo.class
 vista\ClientHistorial$2.class
 vista\ViewNotificacionExito$1.class
 vista\ClientSegPaquete$5.class
@@ -103,6 +106,7 @@ vista\ViewSeleccionUsuario$2.class
 controlador\ClienteSeguimiento$1.class
 vista\ClientSegPaquete$2.class
 vista\ViewPrincipal$1.class
+modelo\EnvioTablas$5.class
 vista\Tabla$4.class
 vista\ClientDevolucion.class
 modelo\Validaciones$1.class
@@ -118,6 +122,7 @@ modelo\SeguimientoPaquete.class
 vista\DriverHistorialEntregas$4.class
 vista\ViewRegistroCliente$2.class
 controlador\ControladorPanelConductor.class
+modelo\EnvioTablas$4.class
 vista\ClientHistorial.class
 vista\ViewRegistroConductor.class
 controlador\ControladorRegistro.class

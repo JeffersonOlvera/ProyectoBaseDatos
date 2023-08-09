@@ -2,7 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
+import modelo.UsuarioDAO;
 
 import modelo.VentanaUtils;
 import vista.DriverHistorialEntregas;
@@ -12,6 +15,7 @@ import vista.DriverDevoluciones;
 import vista.DriverEntregasAsignadas;
 import vista.DriverPerfil;
 import vista.PanelConductor;
+import vista.ViewPrincipal;
 
 public class ControladorPanelConductor implements ActionListener {
 
@@ -24,12 +28,29 @@ public class ControladorPanelConductor implements ActionListener {
         this.panelConductor.BtnDevolucionPendiente.addActionListener(this);
         this.panelConductor.BtnHistorialEntregas.addActionListener(this);
         this.panelConductor.BtnEditarPerfil.addActionListener(this);
+        
+        this.panelConductor.BtnCerrarSesion.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                JOptionPane.showMessageDialog(null, "Se ha cerrado sesión correctamente.");
+                menu();
+
+            }
+        });
     }
 
     public void run() {
         VentanaUtils.mostrarVentana(panelConductor, "Panel Conductor");
     }
 
+    public void menu() {
+        VentanaUtils.cerrarVentana(panelConductor);
+        UsuarioDAO modelo = new UsuarioDAO();
+        ViewPrincipal ventanaPrincipal = new ViewPrincipal();
+        Inicio controlador = new Inicio(modelo, ventanaPrincipal);
+        controlador.run();
+    }
+    
     // Botones
     @Override
     public void actionPerformed(ActionEvent ae) {

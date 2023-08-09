@@ -35,7 +35,6 @@ public class ClienteSeguimiento implements ActionListener {
         Validaciones.aplicarLimitadorDeLongitud(viewSeguimiento.txtCodEnvio, 8);
         Validaciones.aplicarLimitadorDeLongitud(viewCalificacion.txtCalificacion, 1);
 
-//        Validaciones.aplicarLimitadorDeLongitud(viewSeguimiento.txtCodEnvio, 8);
         this.viewSeguimiento.txtCodEnvio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,7 +79,6 @@ public class ClienteSeguimiento implements ActionListener {
             viewSeguimiento.txtPlaca.setText(datos.getnPlaca());
             viewSeguimiento.txtEstado.setText(datos.getEstado());
         } else {
-            // Mostrar el JOptionPane si el código de envío no existe en la base de datos
             clearTextField();
             JOptionPane.showMessageDialog(null, "Código de envío no encontrado en la base de datos.");
         }

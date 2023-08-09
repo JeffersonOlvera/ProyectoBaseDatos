@@ -140,11 +140,14 @@ public class ClientSegPaquete extends javax.swing.JFrame {
         Panel.setBackground(new java.awt.Color(176, 202, 232));
         Panel.setForeground(new java.awt.Color(255, 255, 255));
 
+        txtNombre.setEditable(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
+
+        txtChofer.setEditable(false);
 
         tituloBotonera3.setBackground(new java.awt.Color(0, 0, 0));
         tituloBotonera3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -163,6 +166,8 @@ public class ClientSegPaquete extends javax.swing.JFrame {
         tituloBotonera7.setForeground(new java.awt.Color(0, 0, 0));
         tituloBotonera7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloBotonera7.setText("Chofer:");
+
+        txtPlaca.setEditable(false);
 
         BtnMenu.setBackground(new java.awt.Color(29, 29, 29));
         BtnMenu.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -193,6 +198,7 @@ public class ClientSegPaquete extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+        txtDescripcion.setEditable(false);
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
         jScrollPane1.setViewportView(txtDescripcion);
@@ -202,6 +208,8 @@ public class ClientSegPaquete extends javax.swing.JFrame {
         tituloBotonera6.setForeground(new java.awt.Color(0, 0, 0));
         tituloBotonera6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloBotonera6.setText("Estado:");
+
+        txtEstado.setEditable(false);
 
         BtnCalificar.setBackground(new java.awt.Color(29, 29, 29));
         BtnCalificar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N

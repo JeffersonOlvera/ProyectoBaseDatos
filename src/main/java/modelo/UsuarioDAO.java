@@ -88,7 +88,7 @@ public class UsuarioDAO {
         return false;
     }
 
-   public static AutenticacionResultado autenticacionUsuario(String correo, String contrasena) {
+    public static AutenticacionResultado autenticacionUsuario(String correo, String contrasena) {
         Connection connection = ConexionBD.conectar();
         PreparedStatement statement = null;
         ResultSet result = null;
@@ -133,8 +133,6 @@ public class UsuarioDAO {
         }
         return null;
     }
-
-
 
     public static void actualizarDatosConductor(Conductor conductor) {
         Connection connection = ConexionBD.conectar();

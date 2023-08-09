@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 public class SeguimientoPaquete {
@@ -19,16 +20,18 @@ public class SeguimientoPaquete {
         PreparedStatement statementEstado = null;
         PreparedStatement statementConductor = null;
         PreparedStatement statementUsuario = null;
+        PreparedStatement statementDireccionDestinatario = null;
 
-        String sqlEnvio = "SELECT Id_Destinatario, Id_Camion, Id_Estado FROM Envio WHERE Codigo = ?";
+        String sqlEnvio = "SELECT Id_Destinatario, Id_Camion, Id_Estado, Fecha_Hora_Envio FROM Envio WHERE Codigo = ?";
         String sqlCamion = "SELECT N_Placa, Id_Conductor FROM Camion WHERE Id_Camion = ?";
         String sqlDestinatario = "SELECT Nombre, Apellido, Descripcion FROM Destinatario WHERE Id_Destinatario = ?";
         String sqlEstado = "SELECT Estado FROM Estado WHERE Id_Estado = ?";
         String sqlConductor = "SELECT Id_Usuario FROM Conductor WHERE Id_Conductor = ?";
         String sqlUsuario = "SELECT Nombre, Apellido FROM Usuario WHERE Id_Usuario = ?";
+        String sqlDireccionDestinatario = "SELECT Direccion_P FROM Destinatario WHERE Id_Destinatario = ?";
 
         try {
-            // Consultar la tabla "Envio" para obtener Id_Destinatario, Id_Camion e ID_ESTADO
+            // Consultar la tabla "Envio" para obtener Id_Destinatario, Id_Camion, Id_Estado y Fecha_Hora_Envio
             statementEnvio = connection.prepareStatement(sqlEnvio);
             statementEnvio.setInt(1, codigoEnvio);
             ResultSet resultEnvio = statementEnvio.executeQuery();
@@ -36,7 +39,11 @@ public class SeguimientoPaquete {
             if (resultEnvio.next()) {
                 int idDestinatario = resultEnvio.getInt("Id_Destinatario");
                 int idCamion = resultEnvio.getInt("Id_Camion");
-                int idEstado = resultEnvio.getInt("ID_ESTADO");
+                int idEstado = resultEnvio.getInt("Id_Estado");
+
+                java.sql.Date fecha = resultEnvio.getDate("Fecha_Hora_Envio");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String fechaEnvio = dateFormat.format(fecha);
 
                 // Consultar la tabla "Camion" para obtener el N_Placa y el Id_Conductor
                 statementCamion = connection.prepareStatement(sqlCamion);
@@ -47,7 +54,7 @@ public class SeguimientoPaquete {
                     String nPlaca = resultCamion.getString("N_Placa");
                     int idConductor = resultCamion.getInt("Id_Conductor");
 
-                    // Consultar la tabla "Destinatario" para obtener la Descripcion
+                    // Consultar la tabla "Destinatario" para obtener la Descripcion y la Direccion_P
                     statementDestinatario = connection.prepareStatement(sqlDestinatario);
                     statementDestinatario.setInt(1, idDestinatario);
                     ResultSet resultDestinatario = statementDestinatario.executeQuery();
@@ -56,13 +63,23 @@ public class SeguimientoPaquete {
                         String descripcionDestinatario = resultDestinatario.getString("Descripcion");
                         String nombreDestinatario = resultDestinatario.getString("Nombre");
                         String apellidoDestinatario = resultDestinatario.getString("Apellido");
+
+                        // Consultar la dirección del destinatario
+                        statementDireccionDestinatario = connection.prepareStatement(sqlDireccionDestinatario);
+                        statementDireccionDestinatario.setInt(1, idDestinatario);
+                        ResultSet resultDireccionDestinatario = statementDireccionDestinatario.executeQuery();
+
+                        String direccionDestinatario = "";
+                        if (resultDireccionDestinatario.next()) {
+                            direccionDestinatario = resultDireccionDestinatario.getString("Direccion_P");
+                        }
+
                         // Consultar la tabla "Estado" para obtener el Nombre_Estado
                         statementEstado = connection.prepareStatement(sqlEstado);
                         statementEstado.setInt(1, idEstado);
                         ResultSet resultEstado = statementEstado.executeQuery();
 
                         if (resultEstado.next()) {
-//                            String nombreEstado = resultEstado.getString("Nombre_Estado");
                             String estado = resultEstado.getString("Estado");
                             // Consultar la tabla "Conductor" para obtener el Id_Usuario del conductor
                             statementConductor = connection.prepareStatement(sqlConductor);
@@ -90,6 +107,8 @@ public class SeguimientoPaquete {
                                     datosEnvio.setEstado(estado);
                                     datosEnvio.setNombreConductor(nombreConductor);
                                     datosEnvio.setApellidoConductor(apellidoConductor);
+                                    datosEnvio.setFechaEnvio(fechaEnvio);
+                                    datosEnvio.setDireccion(direccionDestinatario);
                                 }
                             }
                         }
@@ -118,6 +137,9 @@ public class SeguimientoPaquete {
                 }
                 if (statementUsuario != null) {
                     statementUsuario.close();
+                }
+                if (statementDireccionDestinatario != null) {
+                    statementDireccionDestinatario.close();
                 }
                 connection.close();
             } catch (SQLException e) {
@@ -258,6 +280,5 @@ public class SeguimientoPaquete {
             }
         }
     }
-
 
 }
